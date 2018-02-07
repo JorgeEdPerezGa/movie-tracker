@@ -1,13 +1,10 @@
 .nav-menu {
   background-color: purple;
-  padding: 20px;
-}
+  padding: 20px; }
 
 .nav {
   color: white;
-  text-decoration-line: none;
-}
+  text-decoration-line: none; }
 
 .active {
-  color: lightblue;
-}
+  color: lightblue; }
