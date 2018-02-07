@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addUser } from '../../actions';
 import { connect } from 'react-redux';
+import { registerUser } from '../../helper';
 import './Register.css';
 
 export class Register extends Component {
@@ -9,7 +10,7 @@ export class Register extends Component {
     this.state = {
       name: '',
       email: '',
-      password: '',
+      password1: '',
       password2: ''
     };
   }
@@ -21,9 +22,21 @@ export class Register extends Component {
     });
   }
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
+    const { password1, password2, email, name } = this.state
+
     event.preventDefault();
     this.props.addUser(this.state);
+
+    //if ( password1 === password2 ) {
+      const watchReg = await registerUser({
+        name,
+        email,
+        password: password1
+      })
+     
+
+    //}
   }
 
   render() {
@@ -45,11 +58,11 @@ export class Register extends Component {
             value={this.state.email}
             onChange = {this.handleChange}/>
           <input
-            className='user-password'
+            className='user-password-1'
             placeholder='password'
-            name='password'
+            name='password1'
             type='text'
-            value={this.state.password}
+            value={this.state.password1}
             onChange = {this.handleChange}/>
           <input
             className='user-password-2'

@@ -18,3 +18,34 @@ export const cleanMovies = (response) => {
   });
   return Promise.all(movies);
 };
+
+export const registerUser = async user => {
+  const url='/api/users/new'
+  //const url='localhost:3000/api/users/new'
+
+  const register = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(user)
+  }) 
+
+  return await register.json()
+}
+
+export const loginUser = async ({ email, password }) => {
+  const url = '/api/users/'
+  //const url='http://localhost:3000/api/users'
+
+  const response = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({email, password}),
+    headers: {
+      "Content-Type": "application/json",
+    }
+  })
+
+  return await response.json()
+
+}
