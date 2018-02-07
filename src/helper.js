@@ -20,8 +20,8 @@ export const cleanMovies = (response) => {
 };
 
 export const registerUser = async user => {
- // const url='/api/users/new'
-  const url='localhost:3000/api/users/new'
+  const url='/api/users/new'
+  //const url='localhost:3000/api/users/new'
 
   const register = await fetch(url, {
     method: "POST",
@@ -35,8 +35,8 @@ export const registerUser = async user => {
 }
 
 export const loginUser = async ({ email, password }) => {
- // const url = '/api/users/'
-  const url='http://localhost:3000/api/users'
+  const url = '/api/users/'
+  //const url='http://localhost:3000/api/users'
 
   const response = await fetch(url, {
     method: "POST",
