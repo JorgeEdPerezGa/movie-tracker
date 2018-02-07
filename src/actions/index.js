@@ -4,3 +4,10 @@ export const addMovies = (movies) => {
     movies
   };
 };
+
+export const addUser = (user) => {
+  return {
+    type: 'ADD_USER',
+    user
+  };
+};
