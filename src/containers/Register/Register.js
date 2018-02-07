@@ -34,7 +34,7 @@ export class Register extends Component {
         email,
         password: password1
       })
-      debugger
+     
 
     //}
   }

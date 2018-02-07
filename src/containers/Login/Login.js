@@ -21,7 +21,9 @@ export class Login extends Component {
   handleSubmit = async (event) => {
     console.log('boo')
     event.preventDefault()
+
     const testFetch = await loginUser(this.state)
+    
     console.log(testFetch)
   }
 

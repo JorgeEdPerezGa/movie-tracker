@@ -20,7 +20,8 @@ export const cleanMovies = (response) => {
 };
 
 export const registerUser = async user => {
-  const url='http://localhost:3000/api/users/new'
+ // const url='/api/users/new'
+  const url='localhost:3000/api/users/new'
 
   const register = await fetch(url, {
     method: "POST",
@@ -34,16 +35,15 @@ export const registerUser = async user => {
 }
 
 export const loginUser = async ({ email, password }) => {
-  const url = 'http://localhost:3000/api/users'
+ // const url = '/api/users/'
+  const url='http://localhost:3000/api/users'
 
   const response = await fetch(url, {
-    method: "GET",
-    mode: "no-cors",
+    method: "POST",
+    body: JSON.stringify({email, password}),
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
     }
-
-   // body: JSON.stringify({ email, password})
   })
 
   return await response.json()
