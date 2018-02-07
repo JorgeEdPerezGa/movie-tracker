@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { initialFetch } from '../../helper';
-import { addMovies } from '../../actions';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import './Movies.css';
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
+import { loginUser } from '../../helper'
 
 export class Login extends Component {
   constructor(){
@@ -17,10 +18,18 @@ export class Login extends Component {
     });
   }
 
+  handleSubmit = async (event) => {
+    console.log('boo')
+    event.preventDefault()
+    const testFetch = await loginUser(this.state)
+    console.log(testFetch)
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form 
+          onSubmit={this.handleSubmit}>
           <input
             className='user-email'
             placeholder='email'
