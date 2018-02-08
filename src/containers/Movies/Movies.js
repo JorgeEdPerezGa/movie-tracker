@@ -16,7 +16,6 @@ export class Movies extends Component {
   }
 
   handleFavorites = (movie) => {
-    console.log(this.props.user.name);
     if (!this.props.user.name) {
       return this.props.history.push('/login');
     }
@@ -24,6 +23,14 @@ export class Movies extends Component {
 
     this.props.toggleFavorite(favMovie);
     this.props.updateMovies(favMovie);
+  }
+
+  addFavMovie = (movie) => {
+    
+  }
+
+  removeFavMovie = (movie) => {
+    
   }
 
   render() {
