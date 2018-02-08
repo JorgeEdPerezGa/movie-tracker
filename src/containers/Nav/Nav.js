@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { initialFetch } from '../../helper';
-import { addMovies } from '../../actions';
+import { addMovies, logoutUser } from '../../actions';
 import './Nav.css';
 
 export class Nav extends Component {
@@ -12,17 +12,22 @@ export class Nav extends Component {
     this.props.addMovies(movies);
   }
 
+  logoutUser = (user) => {
+    this.props.logoutUser(user);
+  }
+
   render() {
-    if(this.props.user.name){
-        return(
-      <nav className='nav-menu'>
-        <NavLink className='nav' to='/movies'>Movies</NavLink>
-        <NavLink className='nav' to='/favorites'>Favorites</NavLink>
-      </nav>
-      )
+    if (this.props.user.name) {
+      return (
+        <nav className='nav-menu'>
+          <NavLink className='nav' to='/movies'>Movies</NavLink>
+          <NavLink className='nav' to='/favorites'>Favorites</NavLink>
+          <button onClick={this.logoutUser}>Logout</button>
+        </nav>
+      );
     }
 
-    return(
+    return (
       <nav className='nav-menu'>
         <NavLink className='nav' to='/movies'>Movies</NavLink>
         <NavLink className='nav' to='/login'>Login</NavLink>
@@ -35,10 +40,11 @@ export class Nav extends Component {
 
 const mapStateToProps = state => ({
   user: state.user
-})
-
-const mapDispatchToProps = (dispatch) => ({
-  addMovies: (movies) => dispatch(addMovies(movies))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+const mapDispatchToProps = (dispatch) => ({
+  addMovies: (movies) => dispatch(addMovies(movies)),
+  logoutUser: (user) => dispatch(logoutUser(user))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
