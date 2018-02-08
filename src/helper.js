@@ -28,13 +28,13 @@ export const registerUser = async user => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(user)
-    }) 
+    });
 
-    return await register.json()
+    return await register.json();
   } catch (error) {
     return false;
   }
-}
+};
 
 export const loginUser = async ({ email, password }) => {
   try {
@@ -43,12 +43,11 @@ export const loginUser = async ({ email, password }) => {
       method: "POST",
       body: JSON.stringify({email, password}),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       }
-    })
-
-    return await response.json()
+    });
+    return await response.json();
   } catch (error) {
     return false;
   }
-}
+};

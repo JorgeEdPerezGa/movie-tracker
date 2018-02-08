@@ -12,3 +12,9 @@ export const addUser = (user) => {
   };
 };
 
+export const logoutUser = (user) => {
+  return {
+    type: 'LOGOUT_USER',
+    user
+  };
+};
