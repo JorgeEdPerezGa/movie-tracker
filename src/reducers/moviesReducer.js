@@ -4,7 +4,9 @@ export const moviesReducer = (state = [], action) => {
     return [...state, ...action.movies];
   case 'UPDATE_MOVIES':
     const movies = state.map(mov => {
-      if (mov.name ===  action.movie.name) return action.movie
+      if ( mov.title ===  action.movie.title ) {
+        return action.movie
+      }
       return mov
     })
     return [...movies]
