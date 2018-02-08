@@ -5,7 +5,14 @@ export const addMovies = (movies) => {
   };
 };
 
-export const addUser = (user) => {
+export const updateMovies = (movie) => {
+  return {
+    type: 'UPDATE_MOVIES',
+    movie
+  }
+}
+
+export const addUser = (user) => { 
   return {
     type: 'ADD_USER',
     user
