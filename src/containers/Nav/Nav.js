@@ -32,7 +32,6 @@ export class Nav extends Component {
         <NavLink className='nav' to='/movies'>Movies</NavLink>
         <NavLink className='nav' to='/login'>Login</NavLink>
         <NavLink className='nav' to='/register'>Register</NavLink>
-        <NavLink className='nav' to='/favorites'>Favorites</NavLink>
       </nav>
     );
   }

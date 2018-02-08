@@ -16,6 +16,10 @@ export class Movies extends Component {
   }
 
   handleFavorites = (movie) => {
+    console.log(this.props.user.name);
+    if (!this.props.user.name) {
+      return this.props.history.push('/login');
+    }
     const favMovie = {...movie, favorite: !movie.favorite};
 
     this.props.toggleFavorite(favMovie);
@@ -33,7 +37,8 @@ export class Movies extends Component {
 }
 
 const mapStateToProps = state => ({
-  movies: state.movies
+  movies: state.movies,
+  user: state.user
 });
 
 const mapDispatchToProps = (dispatch) => ({
