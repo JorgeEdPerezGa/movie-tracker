@@ -28,15 +28,16 @@ export class Register extends Component {
     event.preventDefault();
     this.props.addUser(this.state);
 
-    //if ( password1 === password2 ) {
+    if ( password1 === password2 ) {
       const watchReg = await registerUser({
         name,
         email,
         password: password1
       })
-     
+    } else {
+      alert(`Passwords don't match`);
+    }
 
-    //}
   }
 
   render() {

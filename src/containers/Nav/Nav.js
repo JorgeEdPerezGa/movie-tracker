@@ -12,8 +12,16 @@ export class Nav extends Component {
     this.props.addMovies(movies);
   }
 
-
   render() {
+    if(this.props.user.name){
+        return(
+      <nav className='nav-menu'>
+        <NavLink className='nav' to='/movies'>Movies</NavLink>
+        <NavLink className='nav' to='/favorites'>Favorites</NavLink>
+      </nav>
+      )
+    }
+
     return(
       <nav className='nav-menu'>
         <NavLink className='nav' to='/movies'>Movies</NavLink>
@@ -25,8 +33,12 @@ export class Nav extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  user: state.user
+})
+
 const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies))
 });
 
-export default connect(null, mapDispatchToProps)(Nav)
+export default connect(mapStateToProps, mapDispatchToProps)(Nav)

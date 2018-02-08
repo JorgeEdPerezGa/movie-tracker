@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { loginUser } from '../../helper';
+import { addUser } from '../../actions';
 import './Login.css';
-import { loginUser } from '../../helper'
 
 export class Login extends Component {
   constructor(){
@@ -19,12 +22,16 @@ export class Login extends Component {
   }
 
   handleSubmit = async (event) => {
-    console.log('boo')
     event.preventDefault()
+    const retrievedUser = await loginUser(this.state);
 
-    const testFetch = await loginUser(this.state)
-    
-    console.log(testFetch)
+    if (!retrievedUser) {
+      alert('Email and password do not match');
+    } else {
+      this.props.loginUser(retrievedUser.data);
+      console.log('history', this.props.history);
+      this.props.history.push('/')
+    }
   }
 
   render() {
@@ -53,4 +60,8 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (user) => dispatch(addUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(Login);

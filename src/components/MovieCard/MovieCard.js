@@ -1,7 +1,6 @@
 import React from 'react';
 
 const MovieCard = ({ title, overview, poster, backdrop }) => {
-  console.log(title);
   return (
     <article className='movie-card'>
       <p className='movie-title'>{ title }</p>
