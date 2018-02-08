@@ -8,13 +8,8 @@ export const initialFetch = async() => {
 };
 
 export const cleanMovies = (response) => {
-  const movies = response.results.map(movie => {
-    const title = movie.title;
-    const overview = movie.overview;
-    const poster = movie.poster_path;
-    const backdrop = movie.backdrop_path;
-    const id = movie.id;
-    return {title, overview, poster, backdrop, id};
+  const movies = response.results.map(({ title, overview, poster_path, backdrop_path, id }) => {
+    return { title, overview, poster: poster_path, backdrop: backdrop_path, id };
   });
   return Promise.all(movies);
 };

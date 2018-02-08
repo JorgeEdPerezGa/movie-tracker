@@ -1,8 +1,16 @@
-export const moviesReducer = (store = [], action) => {
+export const moviesReducer = (state = [], action) => {
   switch (action.type) {
   case 'ADD_MOVIES':
-    return [...store, ...action.movies];
+    return [...state, ...action.movies];
+  case 'UPDATE_MOVIES':
+    const movies = state.map(mov => {
+      if ( mov.title ===  action.movie.title ) {
+        return action.movie
+      }
+      return mov
+    })
+    return [...movies]
   default:
-    return store;
+    return state;
   }
 };
