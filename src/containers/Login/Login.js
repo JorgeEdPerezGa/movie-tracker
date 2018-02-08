@@ -19,12 +19,14 @@ export class Login extends Component {
   }
 
   handleSubmit = async (event) => {
-    console.log('boo')
     event.preventDefault()
+    const retrievedUser = await loginUser(this.state);
 
-    const testFetch = await loginUser(this.state)
-    
-    console.log(testFetch)
+    if (!retrievedUser) {
+      alert('Email and password do not match');
+    } else {
+      console.log (retrievedUser.data)
+    }
   }
 
   render() {

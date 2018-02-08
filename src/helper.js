@@ -20,32 +20,35 @@ export const cleanMovies = (response) => {
 };
 
 export const registerUser = async user => {
-  const url='/api/users/new'
-  //const url='localhost:3000/api/users/new'
+  try {
+    const url='/api/users/new';
+    const register = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(user)
+    }) 
 
-  const register = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(user)
-  }) 
-
-  return await register.json()
+    return await register.json()
+  } catch (error) {
+    return false;
+  }
 }
 
 export const loginUser = async ({ email, password }) => {
-  const url = '/api/users/'
-  //const url='http://localhost:3000/api/users'
+  try {
+    const url = '/api/users/';
+    const response = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({email, password}),
+      headers: {
+        "Content-Type": "application/json",
+      }
+    })
 
-  const response = await fetch(url, {
-    method: "POST",
-    body: JSON.stringify({email, password}),
-    headers: {
-      "Content-Type": "application/json",
-    }
-  })
-
-  return await response.json()
-
+    return await response.json()
+  } catch (error) {
+    return false;
+  }
 }
