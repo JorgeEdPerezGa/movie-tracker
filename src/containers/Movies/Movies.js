@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import { toggleFavorite, updateMovies } from '../../actions/'
+import { toggleFavorite, updateMovies } from '../../actions/';
 import './Movies.css';
 
 export class Movies extends Component {
@@ -16,10 +16,10 @@ export class Movies extends Component {
   }
 
   handleFavorites = (movie) => {
-    const favMovie = {...movie, favorite: !movie.favorite}
+    const favMovie = {...movie, favorite: !movie.favorite};
 
-    this.props.toggleFavorite(favMovie)
-    this.props.updateMovies(favMovie)
+    this.props.toggleFavorite(favMovie);
+    this.props.updateMovies(favMovie);
   }
 
   render() {
