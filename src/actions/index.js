@@ -18,3 +18,10 @@ export const logoutUser = (user) => {
     user
   };
 };
+
+export const toggleFavorite = (movie) => {
+  return {
+    type: 'ADD_FAVORITE',
+    movie
+  }
+}
