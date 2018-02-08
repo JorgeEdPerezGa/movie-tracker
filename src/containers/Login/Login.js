@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { loginUser } from '../../helper';
+import { addUser } from '../../actions';
 import './Login.css';
-import { loginUser } from '../../helper'
 
 export class Login extends Component {
   constructor(){
@@ -25,7 +27,7 @@ export class Login extends Component {
     if (!retrievedUser) {
       alert('Email and password do not match');
     } else {
-      console.log (retrievedUser.data)
+      this.props.loginUser(retrievedUser.data);
     }
   }
 
@@ -55,4 +57,8 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  loginUser: (user) => dispatch(addUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(Login);
