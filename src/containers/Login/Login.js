@@ -29,7 +29,6 @@ export class Login extends Component {
       alert('Email and password do not match');
     } else {
       this.props.loginUser(retrievedUser.data);
-      console.log('history', this.props.history);
       this.props.history.push('/')
     }
   }
