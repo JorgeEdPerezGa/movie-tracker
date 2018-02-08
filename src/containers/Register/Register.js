@@ -23,21 +23,28 @@ export class Register extends Component {
   }
 
   handleSubmit = async (event) => {
-    const { password1, password2, email, name } = this.state
-
+    const { password1, password2, email, name } = this.state;
     event.preventDefault();
-    this.props.addUser(this.state);
 
     if ( password1 === password2 ) {
-      const watchReg = await registerUser({
+      const newUser = await registerUser({
         name,
         email,
         password: password1
-      })
+      });
+      this.handleLogin(newUser);
     } else {
       alert(`Passwords don't match`);
     }
+  }
 
+  handleLogin = (newUser) => {
+    if (newUser.error){
+      alert('That email already exists');
+    } else {
+      this.props.addUser(this.state);
+      this.props.history.push('/');
+    }
   }
 
   render() {
