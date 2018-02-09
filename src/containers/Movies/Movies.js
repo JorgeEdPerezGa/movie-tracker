@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
+import { postFavorite } from '../../helper';
 import './Movies.css';
 
 export class Movies extends Component {
@@ -10,7 +11,7 @@ export class Movies extends Component {
     const { movies } = this.props;
     return movies.map((movie, idx) => {
       return (
-        <MovieCard key={movie.id + idx} movie={movie} onFavorite={this.handleFavorites}/>
+        <MovieCard key={movie.movie_id + idx} movie={movie} onFavorite={this.handleFavorites}/>
       );
     });
   }
@@ -33,7 +34,7 @@ export class Movies extends Component {
   addFavMovie = (movie) => {
     console.log('add fav')
     this.props.addFavorite(movie);
-    // call update API here
+    postFavorite(movie, this.props.user);
   }
 
   removeFavMovie = (movie) => {

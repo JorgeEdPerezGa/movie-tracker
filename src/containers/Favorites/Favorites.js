@@ -8,7 +8,7 @@ export class Favorites extends Component {
 
   renderFavorites = () => {
     return this.props.favorites.map((movie, idx) => {
-      return <MovieCard key={movie.id + idx} movie={movie} onFavorite={this.handleFavorites}/>;
+      return <MovieCard key={movie.movie_id + idx} movie={movie} onFavorite={this.handleFavorites}/>;
     });
   }
 
