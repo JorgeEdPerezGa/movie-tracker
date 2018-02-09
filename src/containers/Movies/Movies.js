@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import { toggleFavorite, updateMovies } from '../../actions/';
+import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
 import './Movies.css';
 
 export class Movies extends Component {
@@ -17,20 +17,29 @@ export class Movies extends Component {
 
   handleFavorites = (movie) => {
     if (!this.props.user.name) {
-      return this.props.history.push('/login');
+      // return this.props.history.push('/login');
     }
+
+    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);  
+
     const favMovie = {...movie, favorite: !movie.favorite};
 
-    this.props.toggleFavorite(favMovie);
-    this.props.updateMovies(favMovie);
+    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie); 
+
+    // this.props.toggleFavorite(favMovie);
+    // this.props.updateMovies(favMovie);
   }
 
   addFavMovie = (movie) => {
-    
+    console.log('add fav')
+    this.props.addFavorite(movie);
+    // call update API here
   }
 
   removeFavMovie = (movie) => {
-    
+    console.log('remove fav')
+    this.props.removeFavorite(movie);
+    // call update API here
   }
 
   render() {
@@ -45,11 +54,13 @@ export class Movies extends Component {
 
 const mapStateToProps = state => ({
   movies: state.movies,
-  user: state.user
+  user: state.user,
+  favorites: state.favorites
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleFavorite: movie => dispatch(toggleFavorite(movie)),
+  addFavorite: movie => dispatch(addFavorite(movie)),
+  removeFavorite: movie => dispatch(removeFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
 })
 
