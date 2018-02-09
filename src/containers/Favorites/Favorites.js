@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
-import { toggleFavorite, updateMovies } from '../../actions/';
+import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
 import './Favorites.css';
 
 export class Favorites extends Component {
 
   renderFavorites = () => {
     return this.props.favorites.map((movie, idx) => {
-      return <MovieCard key={movie.id + idx} movie={movie} onFavorite={this.handleFavorites}/>;
+      return <MovieCard key={movie.movie_id + idx} movie={movie} onFavorite={this.handleFavorites}/>;
     });
   }
 
   handleFavorites = (movie) => {
     const favMovie = {...movie, favorite: !movie.favorite};
 
-    this.props.toggleFavorite(favMovie);
     this.props.updateMovies(favMovie);
   }
 
@@ -33,7 +32,6 @@ export const mapStateToProps = (state) => ({
 });
 
 export const mapDispatchToProps = (dispatch) => ({
-  toggleFavorite: movie => dispatch(toggleFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
 });
 

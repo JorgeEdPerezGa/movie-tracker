@@ -26,9 +26,18 @@ export const logoutUser = (user) => {
   };
 };
 
-export const toggleFavorite = (movie) => {
+export const addFavorite = (movie) => {
   return {
     type: 'ADD_FAVORITE',
     movie
   }
 }
+
+export const removeFavorite = (movie) => {
+  return {
+    type: 'REMOVE_FAVORITE',
+    movie
+  }
+}
+
+

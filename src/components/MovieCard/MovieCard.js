@@ -1,15 +1,15 @@
 import React from 'react';
 
 const MovieCard = ({ movie, onFavorite }) => {
-  const { title, overview, poster, backdrop } = movie
+  const { title, overview, poster_path, backdrop_path } = movie
   return (
     <article className='movie-card'>
       <p className='movie-title'>{ title }</p>
       <p className='movie-overview'>{ overview }</p>
       <img
-        className='movie-poster' src={`https://image.tmdb.org/t/p/w500${poster}`}/>
+        className='movie-poster' src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
       <img
-        className='movie-backdrop' src={`https://image.tmdb.org/t/p/w500${backdrop}`}/>
+        className='movie-backdrop' src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}/>
       <button 
         onClick={()=> onFavorite(movie)}
         className='favorite-button'
