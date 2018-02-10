@@ -7,4 +7,10 @@ describe('Routes', () => {
   it.skip('should not pass', () => {
     expect(false).toEqual(true);
   })
+
+  it.skip('should match snapshot', () => {
+    const renderedComponent = shallow(<Routes />);
+
+    expect(renderedComponent).toMatchSnapshot();
+  })
 })
