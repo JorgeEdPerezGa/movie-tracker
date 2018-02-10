@@ -110,7 +110,10 @@ describe('helper', () => {
     });
   });
 
-  describe.skip('post favorite', () => {
+  describe('post favorite', () => {
+    let movie;
+    let user;
+
     beforeAll(() => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 200,
@@ -118,10 +121,40 @@ describe('helper', () => {
           favorite: 'favorite'
         })
       }));
+
+      movie = {
+        'movie_id': '354912',
+        'user_id': '1',
+        'title': "Coco",
+        'poster_path': "/b.jpg",
+        'release_date': "2017-10-27",
+        'vote_average': '7.7',
+        'overview': "Despite his family’s baffling generations-old ban on music...",
+        'backdrop_path': "/a.jpg"
+      };
+
+      user = {
+        email: "fake@123.com",
+        id: '1',
+        name: "ted",
+        password: "pw123"
+      };
     });
 
     it('should call fetch with expected params', () => {
+      const expectedUrl = 'api/users/favorites/new';
+      const expectedBody = {
+        'body': JSON.stringify(movie),
+        'headers': {'Content-Type':
+        'application/json'},
+        'method': 'POST'
+      };
 
+      expect(window.fetch).not.toHaveBeenCalled();
+
+      helper.postFavorite(movie, user);
+
+      expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
     });
 
     it('should return an object if status code is okay', () => {
