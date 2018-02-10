@@ -15,6 +15,13 @@ export const cleanMovies = (response) => {
   return Promise.all(movies);
 };
 
+export const cleanFavorites = (favorites) => {
+  return favorites.map(movie => {
+    movie.favorite = true
+    return movie
+  })
+}
+
 export const registerUser = async user => {
   try {
     const url='/api/users/new';
@@ -66,7 +73,8 @@ export const postFavorite = async (movie, user) => {
           release_date: movie.release_date,
           vote_average: movie.vote_average,
           overview: movie.overview,
-          backdrop: movie.backdrop_path
+          backdrop: movie.backdrop_path,
+          favorite: movie.favorite
         })
     });
 
@@ -76,8 +84,7 @@ export const postFavorite = async (movie, user) => {
   }
 };
 
-export const retrieveFavorites = async userId => {
-  
+export const retrieveFavorites = async userId => { 
   try {
     const url=`api/users/${userId}/favorites/`; 
     const retrieved = await fetch(url)
@@ -88,3 +95,22 @@ export const retrieveFavorites = async userId => {
     throw new Error('could not retrieve user favorites')
   }
 }
+
+export const deleteFavorite = async ({ id }, { movie_id  }) => {
+  try {
+    const url=`api/users/${id}/favorites/${movie_id}`; 
+    const deleted = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({id, movie_id})
+    })
+  }
+  catch(error) {
+    throw new Error('could not delete user favorite')
+  } 
+} 
+ 
+
+

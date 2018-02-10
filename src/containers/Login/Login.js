@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { postUser, retrieveFavorites } from '../../helper';
-import { addUser, addAllFavorites } from '../../actions';
+import { postUser, retrieveFavorites, cleanFavorites } from '../../helper';
+import { addUser, addAllFavorites, updateMovies } from '../../actions';
 import './Login.css';
 
 export class Login extends Component {
@@ -24,16 +24,26 @@ export class Login extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     const retrievedUser = await postUser(this.state);
-
     const userFavorites = await retrieveFavorites(retrievedUser.data.id)
-    this.props.addAllFavorites(userFavorites.data)
 
+    this.handleRetrievedFavorites(userFavorites.data)
+   
     if (!retrievedUser) {
       alert('Email and password do not match');
     } else {
       this.props.loginUser(retrievedUser.data);
       this.props.history.push('/')
     }
+  }
+
+  handleRetrievedFavorites = (favorites) => {
+    const cleanedFavorites = cleanFavorites(favorites)
+
+    cleanedFavorites.forEach(favorite => {
+       this.props.updateMovies(favorite);
+    })
+    this.props.addAllFavorites(cleanedFavorites)
+
   }
 
   render() {
@@ -64,7 +74,8 @@ export class Login extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   loginUser: (user) => dispatch(addUser(user)),
-  addAllFavorites: (movies) => dispatch(addAllFavorites(movies))
+  addAllFavorites: (movies) => dispatch(addAllFavorites(movies)),
+  updateMovies: (movie) => dispatch(updateMovies(movie))
 });
 
 export default connect(null, mapDispatchToProps)(Login);
