@@ -104,7 +104,7 @@ export const retrieveFavorites = async userId => {
   }
 }
 
-export const deleteFavorite = async ({ id }, { movie_id  }) => {
+export const deleteFavorite = async ({ movie_id  }, { id }) => {
   try {
     const url=`api/users/${id}/favorites/${movie_id}`;
     const deleted = await fetch(url, {
