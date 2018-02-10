@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { initialFetch } from '../../helper';
+import { initialFetch, cleanMovies } from '../../helper';
 import { addMovies, logoutUser } from '../../actions';
 import './Nav.css';
 
 export class Nav extends Component {
 
   async componentDidMount(){
-    const movies = await initialFetch();
+    const response = await initialFetch();
+    const movies = await cleanMovies(response);
     this.props.addMovies(movies);
   }
 
