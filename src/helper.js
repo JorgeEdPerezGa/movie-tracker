@@ -32,7 +32,7 @@ export const registerUser = async user => {
   }
 };
 
-export const loginUser = async ({ email, password }) => {
+export const postUser = async ({ email, password }) => {
   try {
     const url = '/api/users/';
     const response = await fetch(url, {
@@ -49,28 +49,42 @@ export const loginUser = async ({ email, password }) => {
 };
 
 export const postFavorite = async (movie, user) => {
-  const postObj = {
-    movie_id: movie.movie_id,
-    user_id: user.id,
-    title: movie.title,
-    poster_path: movie.poster_path,
-    release_date: movie.release_date,
-    vote_average: movie.vote_average,
-    overview: movie.overview
-  }
   try {
     const url='api/users/favorites/new';
-    console.log('movie', movie, 'user', user);
-    const register = await fetch(url, {
+    
+    const posted = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(postObj)
+      body: JSON.stringify(
+        {
+          movie_id: movie.movie_id,
+          user_id: user.id,
+          title: movie.title,
+          poster_path: movie.poster_path,
+          release_date: movie.release_date,
+          vote_average: movie.vote_average,
+          overview: movie.overview,
+          backdrop: movie.backdrop_path
+        })
     });
 
-    return await register.json();
+    return await posted.json();
   } catch (error) {
     throw new Error('error message for add favorite');
   }
 };
+
+export const retrieveFavorites = async userId => {
+  
+  try {
+    const url=`api/users/${userId}/favorites/`; 
+    const retrieved = await fetch(url)
+
+    return await retrieved.json();
+  }
+  catch(error) {
+    throw new Error('could not retrieve user favorites')
+  }
+}
