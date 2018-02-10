@@ -54,10 +54,6 @@ describe('Favorites', () => {
     expect(renderedComponent).toMatchSnapshot();
   })
 
-  it('if no user is logged in, push user to login route', () => {
-    
-  })
-
   it('when user favorites a card and it is already in Favorites, it is removed', () => {
 
   })
