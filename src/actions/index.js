@@ -1,50 +1,38 @@
-export const addMovies = (movies) => {
-  return {
+export const addUser = user => ({
+  type: 'ADD_USER',
+  user
+});
+
+
+export const logoutUser = user => ({
+  type: 'LOGOUT_USER',
+  user
+});
+
+export const addMovies = movies => ({
     type: 'ADD_MOVIES',
     movies
-  };
-};
+});
 
-export const updateMovies = (movie) => {
-  return {
-    type: 'UPDATE_MOVIES',
-    movie
-  }
-}
 
-export const addUser = (user) => { 
-  return {
-    type: 'ADD_USER',
-    user
-  };
-};
+export const updateMovies = movie => ({
+  type: 'UPDATE_MOVIES',
+  movie
+});
 
-export const logoutUser = (user) => {
-  return {
-    type: 'LOGOUT_USER',
-    user
-  };
-};
+export const addFavorite = movie => ({
+  type: 'ADD_FAVORITE',
+  movie
+});
 
-export const addFavorite = (movie) => {
-  return {
-    type: 'ADD_FAVORITE',
-    movie
-  }
-}
-
-export const removeFavorite = (movie) => {
-  return {
+export const removeFavorite = movie => ({
     type: 'REMOVE_FAVORITE',
     movie
-  }
-}
+});
 
-export const addAllFavorites = (movies) => {
-  return {
+export const addAllFavorites = movies => ({
     type: 'ADD_ALL_FAVORITES',
     movies
-  }
-}
+});
 
 

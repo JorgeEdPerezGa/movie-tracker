@@ -56,6 +56,7 @@ export const postUser = async ({ email, password }) => {
 };
 
 export const postFavorite = async (movie, user) => {
+
   try {
     const url='api/users/favorites/new';
     
@@ -73,13 +74,14 @@ export const postFavorite = async (movie, user) => {
           release_date: movie.release_date,
           vote_average: movie.vote_average,
           overview: movie.overview,
-          backdrop: movie.backdrop_path,
+          backdrop_path: movie.backdrop_path,
           favorite: movie.favorite
         })
     });
 
     return await posted.json();
   } catch (error) {
+    throw error
     throw new Error('error message for add favorite');
   }
 };
