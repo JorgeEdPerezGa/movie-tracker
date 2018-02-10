@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
+import { postFavorite, deleteFavorite } from '../../helper';
 import './Favorites.css';
 
 export class Favorites extends Component {
@@ -12,10 +13,28 @@ export class Favorites extends Component {
     });
   }
 
-  handleFavorites = (movie) => {
+   handleFavorites = (movie) => {
+    if (!this.props.user.name) {
+      return this.props.history.push('/login');
+    }
+
+    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);  
+
     const favMovie = {...movie, favorite: !movie.favorite};
 
+    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie); 
+
     this.props.updateMovies(favMovie);
+  }
+
+  addFavMovie = (movie) => {
+    this.props.addFavorite(movie);
+    postFavorite(movie, this.props.user);
+  }
+
+  removeFavMovie = (movie) => {
+    this.props.removeFavorite(movie);
+    deleteFavorite(this.props.user, movie)
   }
 
   render() {
@@ -28,11 +47,15 @@ export class Favorites extends Component {
 }
 
 export const mapStateToProps = (state) => ({
-  favorites: state.favorites
+  favorites: state.favorites,
+  movies: state.movies,
+  user: state.user
 });
 
-export const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
+  addFavorite: movie => dispatch(addFavorite(movie)),
+  removeFavorite: movie => dispatch(removeFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
-});
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Favorites);
