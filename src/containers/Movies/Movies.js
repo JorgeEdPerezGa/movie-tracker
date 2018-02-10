@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
-import { postFavorite } from '../../helper';
+import { postFavorite, deleteFavorite } from '../../helper';
 import './Movies.css';
 
 export class Movies extends Component {
@@ -27,20 +27,17 @@ export class Movies extends Component {
 
     duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie); 
 
-    // this.props.toggleFavorite(favMovie);
-    // this.props.updateMovies(favMovie);
+    this.props.updateMovies(favMovie);
   }
 
   addFavMovie = (movie) => {
-    console.log('add fav')
     this.props.addFavorite(movie);
     postFavorite(movie, this.props.user);
   }
 
   removeFavMovie = (movie) => {
-    console.log('remove fav')
     this.props.removeFavorite(movie);
-    // call update API here
+    deleteFavorite(this.props.user, movie)
   }
 
   render() {
