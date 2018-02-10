@@ -22,11 +22,11 @@ export class Movies extends Component {
       return this.props.history.push('/login');
     }
 
-    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);  
+    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);
 
     const favMovie = {...movie, favorite: !movie.favorite};
 
-    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie); 
+    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie);
 
     this.props.updateMovies(favMovie);
   }

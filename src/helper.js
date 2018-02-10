@@ -1,11 +1,17 @@
 import key from './api/key.js';
 
 export const initialFetch = async() => {
-  const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}`;
-  const initialFetch = await fetch(url);
-  const response = await initialFetch.json();
-  console.log(response)
-  return cleanMovies(response);
+  try {
+    const url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}`;
+    const initialFetch = await fetch(url);
+    if (initialFetch.status > 200) {
+      throw new Error('could not fetch movies');
+    } else {
+      return await initialFetch.json();
+    }
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const cleanMovies = (response) => {
@@ -17,10 +23,10 @@ export const cleanMovies = (response) => {
 
 export const cleanFavorites = (favorites) => {
   return favorites.map(movie => {
-    movie.favorite = true
-    return movie
-  })
-}
+    movie.favorite = true;
+    return movie;
+  });
+};
 
 export const registerUser = async user => {
   try {
@@ -59,7 +65,7 @@ export const postFavorite = async (movie, user) => {
 
   try {
     const url='api/users/favorites/new';
-    
+
     const posted = await fetch(url, {
       method: "POST",
       headers: {
@@ -86,9 +92,9 @@ export const postFavorite = async (movie, user) => {
   }
 };
 
-export const retrieveFavorites = async userId => { 
+export const retrieveFavorites = async userId => {
   try {
-    const url=`api/users/${userId}/favorites/`; 
+    const url=`api/users/${userId}/favorites/`;
     const retrieved = await fetch(url)
 
     return await retrieved.json();
@@ -100,19 +106,15 @@ export const retrieveFavorites = async userId => {
 
 export const deleteFavorite = async ({ id }, { movie_id  }) => {
   try {
-    const url=`api/users/${id}/favorites/${movie_id}`; 
+    const url=`api/users/${id}/favorites/${movie_id}`;
     const deleted = await fetch(url, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({id, movie_id})
-    })
+    });
+  } catch (error) {
+    throw new Error('could not delete user favorite');
   }
-  catch(error) {
-    throw new Error('could not delete user favorite')
-  } 
-} 
- 
-
-
+};
