@@ -14,7 +14,7 @@ export class Favorites extends Component {
   }
 
    handleFavorites = (movie) => {
-    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);  
+    const duplicated = this.props.favorites.some(fav => movie.title === fav.title); 
 
     const favMovie = {...movie, favorite: !movie.favorite};
 
@@ -30,7 +30,7 @@ export class Favorites extends Component {
 
   removeFavMovie = (movie) => {
     this.props.removeFavorite(movie);
-    deleteFavorite(this.props.user, movie)
+    deleteFavorite(movie, this.props.user)
   }
 
   render() {
