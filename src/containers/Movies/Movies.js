@@ -10,6 +10,7 @@ export class Movies extends Component {
   displayMovies = () => {
     const { movies } = this.props;
     return movies.map((movie, idx) => {
+      console.log(movie)
       return (
         <MovieCard key={movie.movie_id + idx} movie={movie} onFavorite={this.handleFavorites}/>
       );
