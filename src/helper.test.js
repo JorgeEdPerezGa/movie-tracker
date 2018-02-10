@@ -1,4 +1,4 @@
-import * from './helper';
+import * as helper from './helper';
 
 describe('helper', () => {
   it.skip('should not pass', () => {
