@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { loginUser, retrieveFavorites } from '../../helper';
-import { addUser } from '../../actions';
+import { postUser, retrieveFavorites } from '../../helper';
+import { addUser, addAllFavorites } from '../../actions';
 import './Login.css';
 
 export class Login extends Component {
@@ -23,12 +23,10 @@ export class Login extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    const retrievedUser = await loginUser(this.state);
-    const userFavorites = await retrieveFavorites({id: 3})
-    console.log(userFavorites)
+    const retrievedUser = await postUser(this.state);
 
-    // get favs from logged in user
-    // dispatch to state
+    const userFavorites = await retrieveFavorites(retrievedUser.data.id)
+    this.props.addAllFavorites(userFavorites.data)
 
     if (!retrievedUser) {
       alert('Email and password do not match');
@@ -65,7 +63,8 @@ export class Login extends Component {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  loginUser: (user) => dispatch(addUser(user))
+  loginUser: (user) => dispatch(addUser(user)),
+  addAllFavorites: (movies) => dispatch(addAllFavorites(movies))
 });
 
 export default connect(null, mapDispatchToProps)(Login);

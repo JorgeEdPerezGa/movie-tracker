@@ -40,4 +40,11 @@ export const removeFavorite = (movie) => {
   }
 }
 
+export const addAllFavorites = (movies) => {
+  return {
+    type: 'ADD_ALL_FAVORITES',
+    movies
+  }
+}
+
 

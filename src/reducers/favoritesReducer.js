@@ -4,6 +4,9 @@ export const favoritesReducer = (state = [], action) => {
     return [...state, action.movie];
   case 'REMOVE_FAVORITE':
     return state.filter(movie => movie.title !== action.movie.title);
+  case 'ADD_ALL_FAVORITES':
+  console.log(action.movies)
+    return [...action.movies];
   default: return state
   }
 }

@@ -32,7 +32,7 @@ export const registerUser = async user => {
   }
 };
 
-export const loginUser = async ({ email, password }) => {
+export const postUser = async ({ email, password }) => {
   try {
     const url = '/api/users/';
     const response = await fetch(url, {
@@ -65,7 +65,8 @@ export const postFavorite = async (movie, user) => {
           poster_path: movie.poster_path,
           release_date: movie.release_date,
           vote_average: movie.vote_average,
-          overview: movie.overview
+          overview: movie.overview,
+          backdrop: movie.backdrop_path
         })
     });
 
@@ -75,10 +76,10 @@ export const postFavorite = async (movie, user) => {
   }
 };
 
-export const retrieveFavorites = async user => {
-  console.log(user)
+export const retrieveFavorites = async userId => {
+  
   try {
-    const url=`api/users/${user.id}/favorites/`; 
+    const url=`api/users/${userId}/favorites/`; 
     const retrieved = await fetch(url)
 
     return await retrieved.json();
