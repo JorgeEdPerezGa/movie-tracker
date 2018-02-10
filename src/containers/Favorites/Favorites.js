@@ -48,7 +48,6 @@ export class Favorites extends Component {
 
 export const mapStateToProps = (state) => ({
   favorites: state.favorites,
-  movies: state.movies,
   user: state.user
 });
 
