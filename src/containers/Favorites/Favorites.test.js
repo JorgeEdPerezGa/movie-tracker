@@ -9,7 +9,6 @@ describe('Favorites', () => {
   })
 
   let mockFavorites;
-  let mockMovies;
   let mockUser;
   let mockAddFavorite;
   let mockRemoveFavorite;
@@ -28,24 +27,42 @@ describe('Favorites', () => {
       favorite: true
     }];
     
-    mockUser = {};
+    mockUser = {
+      email: "fake@123.com",
+      id: 2,
+      name: "ted",
+      password: "pw123"
+    };
   })
 
   beforeEach(() => {
-    mockRemoveFavorite = mock.fn();
-    mockUpdateMovies = mock.fn();
-    renderedComponent = mock.fn();
+    mockRemoveFavorite = jest.fn();
+    mockUpdateMovies = jest.fn();
+    renderedComponent = jest.fn();
     renderedComponent = shallow(
       <Favorites 
         favorites={mockFavorites}
-        
+        user={mockUser}
+        addFavorite={mockAddFavorite}
+        removeFavorite={mockRemoveFavorite}
+        updateMovies={mockUpdateMovies}
       />
     );
   })
 
-  it('should match snapshot', () => {
-    
-
+  it.skip('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
+  })
+
+  it('if no user is logged in, push user to login route', () => {
+    
+  })
+
+  it('when user favorites a card and it is already in Favorites, it is removed', () => {
+
+  })
+
+  it('when user favorites a card and it is not in Favorites, it is added', () => {
+
   })
 })

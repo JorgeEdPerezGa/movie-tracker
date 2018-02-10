@@ -1,3 +1,149 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Favorites should match snapshot 1`] = `undefined`;
+exports[`Favorites should match snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    addFavorite={undefined}
+    favorites={
+        Array [
+            Object {
+              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+              "favorite": true,
+              "movie_id": 354912,
+              "overview": "Despite his family’s baffling generations-old ban on music",
+              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+              "release_date": "2017-10-27",
+              "title": "Coco",
+              "vote_average": 7.7,
+            },
+          ]
+    }
+    removeFavorite={[Function]}
+    updateMovies={[Function]}
+    user={
+        Object {
+            "email": "fake@123.com",
+            "id": 2,
+            "name": "ted",
+            "password": "pw123",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <MovieCard
+          movie={
+                    Object {
+                              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                              "favorite": true,
+                              "movie_id": 354912,
+                              "overview": "Despite his family’s baffling generations-old ban on music",
+                              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+                              "release_date": "2017-10-27",
+                              "title": "Coco",
+                              "vote_average": 7.7,
+                            }
+          }
+          onFavorite={[Function]}
+/>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "354912",
+        "nodeType": "function",
+        "props": Object {
+          "movie": Object {
+            "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+            "favorite": true,
+            "movie_id": 354912,
+            "overview": "Despite his family’s baffling generations-old ban on music",
+            "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+            "release_date": "2017-10-27",
+            "title": "Coco",
+            "vote_average": 7.7,
+          },
+          "onFavorite": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <MovieCard
+            movie={
+                        Object {
+                                    "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                                    "favorite": true,
+                                    "movie_id": 354912,
+                                    "overview": "Despite his family’s baffling generations-old ban on music",
+                                    "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+                                    "release_date": "2017-10-27",
+                                    "title": "Coco",
+                                    "vote_average": 7.7,
+                                  }
+            }
+            onFavorite={[Function]}
+/>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "354912",
+          "nodeType": "function",
+          "props": Object {
+            "movie": Object {
+              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+              "favorite": true,
+              "movie_id": 354912,
+              "overview": "Despite his family’s baffling generations-old ban on music",
+              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+              "release_date": "2017-10-27",
+              "title": "Coco",
+              "vote_average": 7.7,
+            },
+            "onFavorite": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
