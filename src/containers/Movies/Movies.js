@@ -10,7 +10,7 @@ export class Movies extends Component {
   displayMovies = () => {
     const { movies } = this.props;
     return movies.map((movie, idx) => {
-      
+
       return (
         <MovieCard key={movie.movie_id + idx} movie={movie} onFavorite={this.handleFavorites}/>
       );
@@ -38,7 +38,7 @@ export class Movies extends Component {
 
   removeFavMovie = (movie) => {
     this.props.removeFavorite(movie);
-    deleteFavorite(this.props.user, movie)
+    deleteFavorite(movie, this.props.user);
   }
 
   render() {
