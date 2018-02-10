@@ -110,7 +110,10 @@ describe('helper', () => {
     });
   });
 
-  describe.skip('post favorite', () => {
+  describe('post favorite', () => {
+    let movie;
+    let user;
+
     beforeAll(() => {
       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 200,
@@ -118,45 +121,153 @@ describe('helper', () => {
           favorite: 'favorite'
         })
       }));
+
+      movie = {
+        'movie_id': '354912',
+        'user_id': '1',
+        'title': "Coco",
+        'poster_path': "/b.jpg",
+        'release_date': "2017-10-27",
+        'vote_average': '7.7',
+        'overview': "Despite his family’s baffling generations-old ban on music...",
+        'backdrop_path': "/a.jpg"
+      };
+
+      user = {
+        email: "fake@123.com",
+        id: '1',
+        name: "ted",
+        password: "pw123"
+      };
     });
 
     it('should call fetch with expected params', () => {
+      const expectedUrl = 'api/users/favorites/new';
+      const expectedBody = {
+        'body': JSON.stringify(movie),
+        'headers': {'Content-Type':
+        'application/json'},
+        'method': 'POST'
+      };
 
+      expect(window.fetch).not.toHaveBeenCalled();
+
+      helper.postFavorite(movie, user);
+
+      expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
     });
 
     it('should return an object if status code is okay', () => {
+      const response = helper.registerUser(user);
+      const expected = {favorite: 'favorite'};
 
+      expect(response).resolves.toEqual(expected);
     });
 
-    it('should throw an error if status code is not okay', () => {
+    it.skip('should throw an error if status code is not okay', () => {
 
     });
   });
 
-  describe.skip('retrieve favorite', () => {
-    it('should call fetch with expected params', () => {
+  describe('retrieve favorite', () => {
+    let movie;
+    let user;
 
+    beforeAll(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve({
+          favorite: 'favorite'
+        })
+      }));
+
+      movie = {
+        'movie_id': '354912',
+        'user_id': '1',
+        'title': "Coco",
+        'poster_path': "/b.jpg",
+        'release_date': "2017-10-27",
+        'vote_average': '7.7',
+        'overview': "Despite his family’s baffling generations-old ban on music...",
+        'backdrop_path': "/a.jpg"
+      };
+
+      user = {
+        email: "fake@123.com",
+        id: '1',
+        name: "ted",
+        password: "pw123"
+      };
+    });
+
+    it('should call fetch with expected params', () => {
+      const expectedUrl = `api/users/${user.id}/favorites/`;
+
+      expect(window.fetch).not.toHaveBeenCalled();
+
+      helper.retrieveFavorites(user.id);
+
+      expect(window.fetch).toHaveBeenCalledWith(expectedUrl);
     });
 
     it('should return an object if status code is okay', () => {
+      const response = helper.registerUser(user);
+      const expected = {favorite: 'favorite'};
+
+      expect(response).resolves.toEqual(expected);
 
     });
 
-    it('should throw an error if status code is not okay', () => {
+    it.skip('should throw an error if status code is not okay', () => {
 
     });
   });
 
-  describe.skip('delete favorite', () => {
-    it('should call fetch with expected params', () => {
+  describe('delete favorite', () => {
+    let movie;
+    let user;
 
+    beforeAll(() => {
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 200,
+        json: () => Promise.resolve({})
+      }));
+
+      movie = {
+        'movie_id': '354912'
+      };
+
+      user = {
+        id: '1'
+      };
+    });
+
+    it('should call fetch with expected params', () => {
+      const { id } = user;
+      const { movie_id } = movie;
+      const expectedUrl = `api/users/${id}/favorites/${movie_id}`;
+      const expectedBody = {
+        'body': JSON.stringify({id, movie_id}),
+        'headers': {'Content-Type':
+        'application/json'},
+        'method': 'DELETE'
+      };
+
+      expect(window.fetch).not.toHaveBeenCalled();
+
+      helper.deleteFavorite(movie, user);
+
+      expect(window.fetch).toHaveBeenCalledWith(expectedUrl, expectedBody);
     });
 
     it('should return an object if status code is okay', () => {
+      const response = helper.registerUser(user);
+      const expected = {};
 
+      expect(response).resolves.toEqual(expected);
     });
 
-    it('should throw an error if status code is not okay', () => {
+    it.skip('should throw an error if status code is not okay', () => {
 
     });
   });
