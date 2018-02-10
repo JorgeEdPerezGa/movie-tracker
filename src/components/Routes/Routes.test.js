@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import Login from './Login';
+import Routes from './Routes';
 
-describe('Login', () => {
+describe('Routes', () => {
   it.skip('should not pass', () => {
     expect(false).toEqual(true);
   })
