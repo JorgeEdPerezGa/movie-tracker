@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { loginUser } from '../../helper';
+import { loginUser, retrieveFavorites } from '../../helper';
 import { addUser } from '../../actions';
 import './Login.css';
 
@@ -24,6 +24,11 @@ export class Login extends Component {
   handleSubmit = async (event) => {
     event.preventDefault()
     const retrievedUser = await loginUser(this.state);
+    const userFavorites = await retrieveFavorites({id: 3})
+    console.log(userFavorites)
+
+    // get favs from logged in user
+    // dispatch to state
 
     if (!retrievedUser) {
       alert('Email and password do not match');
