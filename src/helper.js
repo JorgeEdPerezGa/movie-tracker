@@ -15,10 +15,9 @@ export const initialFetch = async() => {
 };
 
 export const cleanMovies = (response) => {
-  const movies = response.results.map(({ title, overview, poster_path, backdrop_path, id, vote_average, release_date }) => {
+  return response.results.map(({ title, overview, poster_path, backdrop_path, id, vote_average, release_date }) => {
     return { title, overview, poster_path, backdrop_path, movie_id: id, vote_average, release_date };
   });
-  return Promise.all(movies);
 };
 
 export const cleanFavorites = (favorites) => {
@@ -38,8 +37,11 @@ export const registerUser = async user => {
       },
       body: JSON.stringify(user)
     });
-
-    return await register.json();
+    if (register.status > 200) {
+      throw new Error('could not register user');
+    } else {
+      return await register.json();
+    }
   } catch (error) {
     return false;
   }
@@ -55,7 +57,11 @@ export const postUser = async ({ email, password }) => {
         "Content-Type": "application/json"
       }
     });
-    return await response.json();
+    if (response.status > 200) {
+      throw new Error('could not post user');
+    } else {
+      return await response.json();
+    }
   } catch (error) {
     return false;
   }
@@ -84,11 +90,13 @@ export const postFavorite = async (movie, user) => {
           favorite: movie.favorite
         })
     });
-
-    return await posted.json();
+    if (posted.status > 200) {
+      throw new Error('could not add favorite');
+    } else {
+      return await posted.json();
+    }
   } catch (error) {
     throw error
-    throw new Error('error message for add favorite');
   }
 };
 
@@ -97,7 +105,11 @@ export const retrieveFavorites = async userId => {
     const url=`api/users/${userId}/favorites/`;
     const retrieved = await fetch(url)
 
-    return await retrieved.json();
+    if (initialFetch.status > 200) {
+      throw new Error('could not fetch favorites');
+    } else {
+      return await retrieved.json();
+    }
   }
   catch(error) {
     throw new Error('could not retrieve user favorites')
@@ -114,6 +126,11 @@ export const deleteFavorite = async ({ movie_id  }, { id }) => {
       },
       body: JSON.stringify({id, movie_id})
     });
+    if (initialFetch.status > 200) {
+      throw new Error('could not delete user favorite');
+    } else {
+      return await deleted.json();
+    }
   } catch (error) {
     throw new Error('could not delete user favorite');
   }
