@@ -19,9 +19,7 @@ export class Register extends Component {
 
   handleChange = (event) => {
     const {name, value} = event.target;
-    this.setState({
-      [name]: value
-    });
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (event) => {

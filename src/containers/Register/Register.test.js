@@ -42,25 +42,25 @@ describe('Register', () => {
   })
 
   it('should start with the expected default state', () => {
-    const expected = { name: '', email: '', password1: '', password2: '' }
+    const expected = { name: '', email: '', password1: '', password2: '', alert: '', error: false }
 
     expect(renderedComponent.state()).toEqual(expected)
   })
 
   it('should set change state on handleChange', () => {
-    expect(renderedComponent.state()).toEqual({ name: '', email: '', password1: '', password2: '' })
+    expect(renderedComponent.state()).toEqual({ name: '', email: '', password1: '', password2: '', alert: '', error: false })
 
     renderedComponent.instance().handleChange({ target: { name: 'email', value: 'aaa' } })
-    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1:'', password2:''})
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1:'', password2:'', alert: '', error: false})
 
     renderedComponent.instance().handleChange({ target: { name: 'password1', value: 'bbb' } })
-    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1: 'bbb', password2:''})
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1: 'bbb', password2:'', alert: '', error: false})
 
     renderedComponent.instance().handleChange({ target: { name: 'password2', value: 'ccc' } })
-    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1: 'bbb', password2: 'ccc' })
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', name:'', password1: 'bbb', password2: 'ccc', alert: '', error: false })
   })
 
-  it('handleSubmit should call postUser with the expected params', () => {
+  it('handleSubmit should call registerUser with the expected params', () => {
     const state = {email: 'fake', name: 'blob', password1: 'uncrackable', password2: "uncrackable"}
     const expected = {email: 'fake', name: 'blob', password: 'uncrackable'}
     const mockEvent = { preventDefault: jest.fn() }
@@ -72,6 +72,16 @@ describe('Register', () => {
     renderedComponent.instance().handleSubmit(mockEvent )
 
     expect(window.fetch).toHaveBeenCalledWith(expected)
+  })
+
+  it('handleSubmit should setAlert with the expected params if the passwords dont match', () => {
+    renderedComponent.setState({password1: 'a', password2:'b'})
+    const mockEvent = { preventDefault: jest.fn() }
+
+    renderedComponent.instance().handleSubmit(mockEvent)
+
+    expect(renderedComponent.state('error')).toEqual(true)
+    expect(renderedComponent.state('alert')).toEqual("Passwords don't match")
   })
 
   it('handleSubmit should call loginUser with the expected params', () => {
@@ -89,12 +99,32 @@ describe('Register', () => {
   })
 
   it('handleLogin should call addUser', () => {
+    const expected = {
+      email: "kindoffake@123.com",
+      id: 3,
+      name: "fred",
+      password: "pw321"
+    }
     expect(mockLoginUser).not.toHaveBeenCalled()
 
     renderedComponent.setState(mockUser)
-    renderedComponent.instance().handleLogin(mockUser);
+    renderedComponent.instance().handleLogin(3);
 
-    expect(mockAddUser).toHaveBeenCalledWith(mockUser)
+    expect(mockAddUser).toHaveBeenCalledWith(expected)
+  })
+
+  it('handleRegisterUser should call registerUser with the expected params', () => {
+    const state = {email: 'fake', name: 'blob', password1: 'uncrackable', password2: "uncrackable"}
+    const expected = {email: 'fake', name: 'blob', password: 'uncrackable'}
+    const mockEvent = { preventDefault: jest.fn() }
+
+    renderedComponent.setState(state)
+
+    expect(window.fetch).not.toHaveBeenCalled()
+
+    renderedComponent.instance().handleSubmit(mockEvent )
+
+    expect(window.fetch).toHaveBeenCalledWith(expected)
   })
 
   it('setAlert should setState as expected', () => {

@@ -49,7 +49,6 @@ export class Login extends Component {
        this.props.updateMovies(favorite);
     })
     this.props.addAllFavorites(cleanedFavorites)
-
   }
 
   render() {

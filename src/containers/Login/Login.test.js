@@ -51,21 +51,20 @@ describe('Login', () => {
   })
 
   it('should start with the expected default state', () => {
-    const expected = { email: '', password: '' }
+    const expected = { email: '', password: '', "error": false }
 
     expect(renderedComponent.state()).toEqual(expected)
   })
 
-  it('should set change state on handleChange', () => {
-    expect(renderedComponent.state()).toEqual({ email: '', password: '' })
+  it('should update state on handleChange', () => {
+    expect(renderedComponent.state()).toEqual({ email: '', password: '', "error": false })
 
     renderedComponent.instance().handleChange({ target: { name: 'email', value: 'aaa' } })
-    renderedComponent.update()
 
-    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: '' })
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: '', "error": false })
 
     renderedComponent.instance().handleChange({ target: { name: 'password', value: 'bbb' } })
-    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: 'bbb' })
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: 'bbb', "error": false })
   })
 
   it('should call updateMovies on handleRetrievedFavorites', () => {
@@ -83,7 +82,7 @@ describe('Login', () => {
   })
 
   it('handleSubmit should call postUser with the expected params', () => {
-    const expected = {email: 'fake', password: 'uncrackable'}
+    const expected = {email: 'fake', password: 'uncrackable', "error": false}
     const mockEvent = { preventDefault: jest.fn() }
 
     renderedComponent.setState(expected)
@@ -96,7 +95,7 @@ describe('Login', () => {
   })
 
   it('handleSubmit should call loginUser with the expected params', () => {
-    const state = {email: 'one', password: 'two'}
+    const state = {email: 'one', password: 'two', "error": false}
     const mockEvent = { preventDefault: jest.fn() }
 
     renderedComponent.setState(state)
@@ -106,6 +105,12 @@ describe('Login', () => {
     renderedComponent.instance().handleSubmit(mockEvent )
 
     expect(window.fetch).toHaveBeenCalledWith(state)
+  })
+
+  it('should match snapshot when rendering alert', () => {
+    renderedComponent.setState({error: true});
+    renderedComponent.update();
+    expect(renderedComponent).toMatchSnapshot()
   })
 
 })
