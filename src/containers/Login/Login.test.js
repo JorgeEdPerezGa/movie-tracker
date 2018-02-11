@@ -1,15 +1,111 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import Login from './Login';
+import { Login } from './Login';
+
+import helper, { mockHelper } from '../../helper'
+jest.mock('../../helper')
 
 describe('Login', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
+  let renderedComponent
+  let mockLoginUser
+  let mockAddAllFavorites
+  let mockUpdateMovies
+  let favorites
+  let mockHistory
+
+  beforeAll(() => {
+    favorites = [
+      {
+        "backdrop_path": "/dddddd.jpg",
+        "movie_id": 354912,
+        "overview": "Despite his famil...",
+        "poster_path": "/ffff.jpg",
+        "release_date": "2017-10-27",
+        "title": "Coco",
+        "vote_average": 7.7,
+        "favorite": true
+      }
+    ]
   })
 
-  // pass down as props
-  const mockHistory = {
-    push: jest.fn();
-  }
+  beforeEach(() => {
+    mockLoginUser = jest.fn()
+    mockAddAllFavorites = jest.fn()
+    mockUpdateMovies = jest.fn()
+    mockHistory = { push: jest.fn() }
+    window.fetch = jest.fn()
+
+    renderedComponent = shallow(
+      <Login 
+        loginUser={mockLoginUser}
+        addAllFavorites={mockAddAllFavorites}
+        updateMovies={mockUpdateMovies}
+        history={mockHistory}
+      />
+    )
+  })
+
+  it('should match snapshot', () => {
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
+  it('should start with the expected default state', () => {
+    const expected = { email: '', password: '' }
+
+    expect(renderedComponent.state()).toEqual(expected)
+  })
+
+  it('should set change state on handleChange', () => {
+    expect(renderedComponent.state()).toEqual({ email: '', password: '' })
+
+    renderedComponent.instance().handleChange({ target: { name: 'email', value: 'aaa' } })
+    renderedComponent.update()
+
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: '' })
+
+    renderedComponent.instance().handleChange({ target: { name: 'password', value: 'bbb' } })
+    expect(renderedComponent.state()).toEqual({ email: 'aaa', password: 'bbb' })
+  })
+
+  it('should call updateMovies on handleRetrievedFavorites', () => {
+    expect(mockUpdateMovies).not.toHaveBeenCalled()
+
+    renderedComponent.instance().handleRetrievedFavorites(favorites)
+    expect(mockUpdateMovies).toHaveBeenCalled()
+  })
+
+  it('should call addAllFavorites on handleRetrievedFavorites', () => {
+    expect(mockAddAllFavorites).not.toHaveBeenCalled()
+
+    renderedComponent.instance().handleRetrievedFavorites(favorites)
+    expect(mockAddAllFavorites).toHaveBeenCalled()
+  })
+
+  it('handleSubmit should call postUser with the expected params', () => {
+    const expected = {email: 'fake', password: 'uncrackable'}
+    const mockEvent = { preventDefault: jest.fn() }
+
+    renderedComponent.setState(expected)
+
+    expect(window.fetch).not.toHaveBeenCalled()
+
+    renderedComponent.instance().handleSubmit(mockEvent )
+
+    expect(window.fetch).toHaveBeenCalledWith(expected)
+  })
+
+  it('handleSubmit should call loginUser with the expected params', () => {
+    const state = {email: 'one', password: 'two'}
+    const mockEvent = { preventDefault: jest.fn() }
+
+    renderedComponent.setState(state)
+
+    expect(window.fetch).not.toHaveBeenCalled()
+
+    renderedComponent.instance().handleSubmit(mockEvent )
+
+    expect(window.fetch).toHaveBeenCalledWith(state)
+  })
+
 })
