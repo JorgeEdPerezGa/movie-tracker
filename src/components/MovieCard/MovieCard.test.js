@@ -4,9 +4,6 @@ import { shallow } from 'enzyme';
 import MovieCard from './MovieCard';
 
 describe('MovieCard', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
-  })
 
   let mockMovie;
   let mockOnFavorite;
@@ -29,7 +26,7 @@ describe('MovieCard', () => {
     renderedComponent = shallow(<MovieCard key={1} movie={mockMovie} onFavorite={mockOnFavorite} />)
   })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   })
 
