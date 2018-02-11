@@ -4,11 +4,8 @@ import { shallow } from 'enzyme';
 import Routes from './Routes';
 
 describe('Routes', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
-  })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     const renderedComponent = shallow(<Routes />);
 
     expect(renderedComponent).toMatchSnapshot();
