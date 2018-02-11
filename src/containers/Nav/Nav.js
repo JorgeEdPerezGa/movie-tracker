@@ -27,11 +27,11 @@ export class Nav extends Component {
         <nav className='nav-menu'>
           <p
             className='app-title-1'>
-          <NavLink to='/' className='home-nav'>
-            <span
-              className='app-title-2'>MOVIE
-            </span>TRACKER
-          </NavLink>
+            <NavLink to='/' className='home-nav'>
+              <span
+                className='app-title-2'>MOVIE
+              </span>TRACKER
+            </NavLink>
           </p>
           <div className='menu'>
             <NavLink className='nav' to='/movies'>Movies</NavLink>
