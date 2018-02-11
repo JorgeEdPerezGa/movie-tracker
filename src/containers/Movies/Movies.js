@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import MovieCard from '../../components/MovieCard/MovieCard';
 import { addFavorite, removeFavorite, updateMovies } from '../../actions/';
 import { postFavorite, deleteFavorite } from '../../helper';
@@ -62,5 +63,14 @@ const mapDispatchToProps = (dispatch) => ({
   removeFavorite: movie => dispatch(removeFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
 })
+
+Movies.propTypes = {
+  movies: PropTypes.array,
+  favorites: PropTypes.array,
+  user: PropTypes.object,
+  addFavorite: PropTypes.func,
+  removeFavorite: PropTypes.func,
+  updateMovies: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies);

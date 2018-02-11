@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { postUser, retrieveFavorites, cleanFavorites } from '../../helper';
 import { addUser, addAllFavorites, updateMovies } from '../../actions';
 import './Login.css';
@@ -87,5 +88,11 @@ const mapDispatchToProps = (dispatch) => ({
   addAllFavorites: (movies) => dispatch(addAllFavorites(movies)),
   updateMovies: (movie) => dispatch(updateMovies(movie))
 });
+
+Login.propTypes = {
+  loginUser: PropTypes.func,
+  addAllFavorites: PropTypes.func,
+  updateMovies: PropTypes.func
+};
 
 export default connect(null, mapDispatchToProps)(Login);
