@@ -2,10 +2,7 @@ import * as helper from './helper';
 import key from './api/key.js';
 
 describe('helper', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
-  });
-
+ 
   describe('initialFetch', () => {
 
     beforeAll(() => {
@@ -103,10 +100,14 @@ describe('helper', () => {
       expect(response).resolves.toEqual(expected);
     });
 
-    it.skip('should throw an error if status code is not okay', () => {
-      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+    it('should throw an error if status code is not okay', () => {
+       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 500
       }));
+
+      const response = helper.registerUser(user);
+
+      expect(response).resolves.toEqual(false);
     });
   });
 
@@ -164,7 +165,7 @@ describe('helper', () => {
       expect(response).resolves.toEqual(expected);
     });
 
-    it.skip('should throw an error if status code is not okay', () => {
+    it('should throw an error if status code is not okay', () => {
 
     });
   });
@@ -218,8 +219,14 @@ describe('helper', () => {
 
     });
 
-    it.skip('should throw an error if status code is not okay', () => {
+    it('should throw an error if status code is not okay', () => {
+       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 500
+      }));
 
+      const response = helper.registerUser(user);
+
+      expect(response).resolves.toEqual(false);
     });
   });
 
@@ -261,14 +268,21 @@ describe('helper', () => {
     });
 
     it('should return an object if status code is okay', () => {
-      const response = helper.registerUser(user);
+      const response = helper.deleteFavorite(movie, user);
       const expected = {};
 
       expect(response).resolves.toEqual(expected);
     });
 
-    it.skip('should throw an error if status code is not okay', () => {
+    it('should throw an error if status code is not okay', () => {
+       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+        status: 500
+      }));
 
+      const response = helper.deleteFavorite(movie, user);
+      const expected = Error('could not delete user favorite');
+
+      expect(response).rejects.toEqual(expected);
     });
   });
 
