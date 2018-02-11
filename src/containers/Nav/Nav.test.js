@@ -8,6 +8,7 @@ describe('Nav', () => {
   let renderedComponent;
   let mockAddMovies;
   let mockLogoutUser;
+  let mockClearFavorites;
   let mockUser;
   let mockMoviesData;
 
@@ -56,6 +57,7 @@ describe('Nav', () => {
   beforeEach(() => {
     mockAddMovies = jest.fn();
     mockLogoutUser = jest.fn();
+    mockClearFavorites = jest.fn();
     mockUser = {
       email: "fake@123.com",
       id: 2,
@@ -67,6 +69,7 @@ describe('Nav', () => {
         user={mockUser}
         addMovies={mockAddMovies}
         logoutUser={mockLogoutUser}
+        clearFavorites={mockClearFavorites}
       />
     );
   })
@@ -78,6 +81,7 @@ describe('Nav', () => {
         user={mockUser}
         addMovies={mockAddMovies}
         logoutUser={mockLogoutUser}
+        clearFavorites={mockClearFavorites}
       />
     );
     expect(renderedComponent).toMatchSnapshot();
@@ -90,5 +94,10 @@ describe('Nav', () => {
   it('should logout user when user clicks logout button and logoutUser is called', () => {
     renderedComponent.instance().handleLogoutUser();
     expect(mockLogoutUser).toHaveBeenCalledWith(mockUser);
+  })
+
+  it('should clear favorites in store when user clicks logout button and clearFavorites is called', () => {
+    renderedComponent.instance().handleLogoutUser();
+    expect(mockClearFavorites).toHaveBeenCalled();
   })
 })
