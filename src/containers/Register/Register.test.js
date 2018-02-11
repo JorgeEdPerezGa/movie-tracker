@@ -7,4 +7,9 @@ describe('Register', () => {
   it.skip('should not pass', () => {
     expect(false).toEqual(true);
   })
+  
+  // pass down as props
+  const mockHistory = {
+    push: jest.fn();
+  }
 })
