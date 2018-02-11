@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const MovieCard = ({ movie, onFavorite }) => {
   const { title, overview, poster_path, backdrop_path, movie_id } = movie
@@ -19,6 +20,11 @@ const MovieCard = ({ movie, onFavorite }) => {
         >&#9829;</button>
     </article>
   );
+};
+
+MovieCard.propTypes = {
+  movie: PropTypes.object,
+  onFavorite: PropTypes.func
 };
 
 export default MovieCard;

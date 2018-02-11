@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const MovieView = ({ movie, onFavorite }) => {
   const { title, overview, poster_path, backdrop_path, movie_id } = movie
@@ -16,6 +17,11 @@ const MovieView = ({ movie, onFavorite }) => {
         >&#9829;</button>
     </article>
   );
+};
+
+MovieView.propTypes = {
+  movie: PropTypes.object,
+  onFavorite: PropTypes.func
 };
 
 export default MovieView;
