@@ -6,15 +6,7 @@ import { createMemoryHistory } from 'history';
 import helper, { mockHelper } from '../../helper';
 jest.mock('../../helper');
 
-//redirect user to login
-// // pass down as props
-//   const mockHistory = {
-//     push: jest.fn();
-//   }
 describe('Movies', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
-  });
 
   let mockFavorites;
   let mockMovies;
@@ -99,7 +91,7 @@ describe('Movies', () => {
     );
   });
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
