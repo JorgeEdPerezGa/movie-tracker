@@ -18,7 +18,7 @@ const MovieCard = ({ movie, onFavorite }) => {
       <button
         onClick={()=> onFavorite(movie)}
         className='favorite-button'
-        >&#9829;</button>
+        ></button>
     </article>
   );
 };
