@@ -1,0 +1,384 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match snapshot when no user is logged in 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Nav
+    addMovies={[Function]}
+    logoutUser={[Function]}
+    user={Object {}}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/movies"
+>
+          Movies
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/login"
+>
+          Login
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/register"
+>
+          Register
+</NavLink>,
+      ],
+      "className": "nav-menu",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Movies",
+          "className": "nav",
+          "to": "/movies",
+        },
+        "ref": null,
+        "rendered": "Movies",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Login",
+          "className": "nav",
+          "to": "/login",
+        },
+        "ref": null,
+        "rendered": "Login",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Register",
+          "className": "nav",
+          "to": "/register",
+        },
+        "ref": null,
+        "rendered": "Register",
+        "type": [Function],
+      },
+    ],
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/movies"
+>
+            Movies
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/login"
+>
+            Login
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/register"
+>
+            Register
+</NavLink>,
+        ],
+        "className": "nav-menu",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Movies",
+            "className": "nav",
+            "to": "/movies",
+          },
+          "ref": null,
+          "rendered": "Movies",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Login",
+            "className": "nav",
+            "to": "/login",
+          },
+          "ref": null,
+          "rendered": "Login",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Register",
+            "className": "nav",
+            "to": "/register",
+          },
+          "ref": null,
+          "rendered": "Register",
+          "type": [Function],
+        },
+      ],
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Nav should match snapshot when user is logged in 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Nav
+    addMovies={[Function]}
+    logoutUser={[Function]}
+    user={
+        Object {
+            "email": "fake@123.com",
+            "id": 2,
+            "name": "ted",
+            "password": "pw123",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/movies"
+>
+          Movies
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="nav"
+          to="/favorites"
+>
+          Favorites
+</NavLink>,
+        <button
+          onClick={[Function]}
+>
+          Logout
+</button>,
+      ],
+      "className": "nav-menu",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Movies",
+          "className": "nav",
+          "to": "/movies",
+        },
+        "ref": null,
+        "rendered": "Movies",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": "Favorites",
+          "className": "nav",
+          "to": "/favorites",
+        },
+        "ref": null,
+        "rendered": "Favorites",
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Logout",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Logout",
+        "type": "button",
+      },
+    ],
+    "type": "nav",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/movies"
+>
+            Movies
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="nav"
+            to="/favorites"
+>
+            Favorites
+</NavLink>,
+          <button
+            onClick={[Function]}
+>
+            Logout
+</button>,
+        ],
+        "className": "nav-menu",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Movies",
+            "className": "nav",
+            "to": "/movies",
+          },
+          "ref": null,
+          "rendered": "Movies",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": "Favorites",
+            "className": "nav",
+            "to": "/favorites",
+          },
+          "ref": null,
+          "rendered": "Favorites",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Logout",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Logout",
+          "type": "button",
+        },
+      ],
+      "type": "nav",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
