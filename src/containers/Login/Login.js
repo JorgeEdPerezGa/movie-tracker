@@ -27,7 +27,7 @@ export class Login extends Component {
     const userFavorites = await retrieveFavorites(retrievedUser.data.id)
 
     this.handleRetrievedFavorites(userFavorites.data)
-   
+
     if (!retrievedUser) {
       alert('Email and password do not match');
     } else {
@@ -48,24 +48,28 @@ export class Login extends Component {
 
   render() {
     return (
-      <div>
-        <form 
+      <div className='login'>
+        <h1 className='page-title'>WELCOME BACK</h1>
+        <form
+          className='login-form'
           onSubmit={this.handleSubmit}>
-          <input
-            className='user-email'
-            placeholder='email'
-            name='email'
-            type='text'
-            value={this.state.email}
-            onChange = {this.handleChange}/>
-          <input
-            className='user-password'
-            placeholder='password'
-            name='password'
-            type='text'
-            value={this.state.password}
-            onChange = {this.handleChange}/>
-          <button>ENTER</button>
+          <div className='input-container'>
+            <input
+              className='login-input'
+              placeholder='email'
+              name='email'
+              type='text'
+              value={this.state.email}
+              onChange = {this.handleChange}/>
+            <input
+              className='login-input'
+              placeholder='password'
+              name='password'
+              type='text'
+              value={this.state.password}
+              onChange = {this.handleChange}/>
+            <button className='login-button'>ENTER</button>
+          </div>
         </form>
       </div>
     );

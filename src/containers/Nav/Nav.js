@@ -23,18 +23,33 @@ export class Nav extends Component {
     if (this.props.user.name) {
       return (
         <nav className='nav-menu'>
-          <NavLink className='nav' to='/movies'>Movies</NavLink>
-          <NavLink className='nav' to='/favorites'>Favorites</NavLink>
-          <button onClick={this.handleLogoutUser}>Logout</button>
+          <p
+            className='app-title-1'>
+            <span
+              className='app-title-2'>MOVIE
+            </span>TRACKER
+          </p>
+          <div className='menu'>
+            <NavLink className='nav' to='/movies'>Movies</NavLink>
+            <NavLink className='nav' to='/favorites'>Favorites</NavLink>
+            <button onClick={this.handleLogoutUser}>Logout</button>
+          </div>
         </nav>
       );
     }
 
     return (
       <nav className='nav-menu'>
-        <NavLink className='nav' to='/movies'>Movies</NavLink>
-        <NavLink className='nav' to='/login'>Login</NavLink>
-        <NavLink className='nav' to='/register'>Register</NavLink>
+        <p
+          className='app-title-1'>
+          <span
+            className='app-title-2'>MOVIE
+          </span>TRACKER</p>
+        <div className='menu'>
+          <NavLink className='nav' to='/movies'>Movies</NavLink>
+          <NavLink className='nav' to='/login'>Login</NavLink>
+          <NavLink className='nav' to='/register'>Register</NavLink>
+        </div>
       </nav>
     );
   }

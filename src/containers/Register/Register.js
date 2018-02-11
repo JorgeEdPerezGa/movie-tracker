@@ -49,37 +49,42 @@ export class Register extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className='user-name'
-            placeholder='name'
-            name='name'
-            type='text'
-            value={this.state.name}
-            onChange = {this.handleChange}/>
-          <input
-            className='user-email'
-            placeholder='email'
-            name='email'
-            type='text'
-            value={this.state.email}
-            onChange = {this.handleChange}/>
-          <input
-            className='user-password-1'
-            placeholder='password'
-            name='password1'
-            type='text'
-            value={this.state.password1}
-            onChange = {this.handleChange}/>
-          <input
-            className='user-password-2'
-            placeholder='retype password'
-            name='password2'
-            type='text'
-            value={this.state.password2}
-            onChange = {this.handleChange}/>
-          <button>ENTER</button>
+      <div className='register'>
+        <h1 className='page-title'>GET STARTED</h1>
+        <form
+          onSubmit={this.handleSubmit}
+          className='register-form'>
+          <div className='input-container'>
+            <input
+              className='register-input'
+              placeholder='NAME'
+              name='name'
+              type='text'
+              value={this.state.name}
+              onChange = {this.handleChange}/>
+            <input
+              className='register-input'
+              placeholder='EMAIL'
+              name='email'
+              type='text'
+              value={this.state.email}
+              onChange = {this.handleChange}/>
+            <input
+              className='register-input user-password-1'
+              placeholder='PASSWORD'
+              name='password1'
+              type='text'
+              value={this.state.password1}
+              onChange = {this.handleChange}/>
+            <input
+              className='register-input user-password-2'
+              placeholder='RETYPE PASSWORD'
+              name='password2'
+              type='text'
+              value={this.state.password2}
+              onChange = {this.handleChange}/>
+            <button className='register-button'>ENTER</button>
+          </div>
         </form>
       </div>
     );
