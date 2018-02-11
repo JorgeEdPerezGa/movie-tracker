@@ -39,7 +39,7 @@ export class Register extends Component {
   handleRegisterUser = async (user) => {
     try{
       const newUser = await registerUser(user);
-      this.handleLogin(user);  
+      this.handleLogin(newUser.id);  
     } catch(error) {
       this.setAlert('User already exists')
     }
@@ -49,9 +49,9 @@ export class Register extends Component {
     this.setState({error: true, alert, name: '', email: '', password1: '', password2: '' })
   }
   
-  handleLogin = () => {
+  handleLogin = (id) => {
     const { name, email, password1 } = this.state
-    this.props.addUser({name, email, password: password1});
+    this.props.addUser({name, email, password: password1, id});
     this.props.history.push('/');
   }
 

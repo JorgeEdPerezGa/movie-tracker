@@ -101,7 +101,7 @@ describe('Register', () => {
     expect(renderedComponent.state('error')).toEqual(false)
     expect(renderedComponent.state('alert')).toEqual('')
 
-    renderedComponent.instance().setAlert('Alert message')
+    renderedComponent.instance().setAlert('Alert Message')
     renderedComponent.update()
 
     expect(renderedComponent.state('error')).toEqual(true)
