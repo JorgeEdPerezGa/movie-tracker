@@ -43,7 +43,7 @@ export const registerUser = async user => {
       return await register.json();
     }
   } catch (error) {
-    return false;
+    throw(error);
   }
 };
 

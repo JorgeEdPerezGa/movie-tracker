@@ -11,7 +11,9 @@ export class Register extends Component {
       name: '',
       email: '',
       password1: '',
-      password2: ''
+      password2: '',
+      error: false,
+      alert: ''
     };
   }
 
@@ -22,29 +24,41 @@ export class Register extends Component {
     });
   }
 
-  handleSubmit = async (event) => {
-    const { password1, password2, email, name } = this.state;
+  handleSubmit = (event) => {
     event.preventDefault();
+    const { password1, password2, email, name } = this.state;
 
     if ( password1 === password2 ) {
-      const newUser = await registerUser({
-        name,
-        email,
-        password: password1
-      });
-      this.handleLogin(newUser);
-    } else {
-      alert(`Passwords don't match`);
+      const user = { name, email, password: password1 }
+      this.handleRegisterUser(user)
+    } else { 
+      this.setAlert("Passwords don't match")
     }
   }
 
-  handleLogin = (newUser) => {
-    if (newUser.error){
-      alert('That email already exists');
-    } else {
-      this.props.addUser(this.state);
-      this.props.history.push('/');
+  handleRegisterUser = async (user) => {
+    try{
+      const newUser = await registerUser(user);
+      this.handleLogin(user);  
+    } catch(error) {
+      this.setAlert('User already exists')
     }
+  }
+
+  setAlert = (alert) => {
+    this.setState({error: true, alert, name: '', email: '', password1: '', password2: '' })
+  }
+  
+  handleLogin = () => {
+    const { name, email, password1 } = this.state
+    this.props.addUser({name, email, password: password1});
+    this.props.history.push('/');
+  }
+
+  renderAlert = () => {
+    const { error, alert } = this.state;
+    setTimeout(() => { this.setState({error: false}) }, 10000);
+    return error && ( <p color="white">{alert}</p> );
   }
 
   render() {
@@ -86,6 +100,7 @@ export class Register extends Component {
             <button className='register-button'>ENTER</button>
           </div>
         </form>
+          { this.renderAlert() }
       </div>
     );
   }

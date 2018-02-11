@@ -97,4 +97,23 @@ describe('Register', () => {
     expect(mockAddUser).toHaveBeenCalledWith(mockUser)
   })
 
+  it('setAlert should setState as expected', () => {
+    expect(renderedComponent.state('error')).toEqual(false)
+    expect(renderedComponent.state('alert')).toEqual('')
+
+    renderedComponent.instance().setAlert('Alert message')
+    renderedComponent.update()
+
+    expect(renderedComponent.state('error')).toEqual(true)
+    expect(renderedComponent.state('alert')).toEqual('Alert Message')
+
+  })
+
+  it('renderAlert should match snapshot', () => {
+    renderedComponent.instance().setAlert('Alert message')
+    renderedComponent.update()
+
+    expect(renderedComponent).toMatchSnapshot()
+  })
+
 })
