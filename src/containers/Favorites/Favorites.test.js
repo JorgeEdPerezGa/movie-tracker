@@ -7,9 +7,6 @@ import helper, { mockHelper } from '../../helper'
 jest.mock('../../helper')
 
 describe('Favorites', () => {
-  it.skip('should not pass', () => {
-    expect(false).toEqual(true);
-  })
 
   let mockFavorites;
   let mockUser;
@@ -69,7 +66,7 @@ describe('Favorites', () => {
     );
   })
 
-  it.skip('should match snapshot', () => {
+  it('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
   })
 
