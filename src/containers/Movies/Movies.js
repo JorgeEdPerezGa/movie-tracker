@@ -19,6 +19,7 @@ export class Movies extends Component {
 
   handleFavorites = (movie) => {
     if (!this.props.user.name) {
+      console.log(this.props.history.push)
       return this.props.history.push('/login');
     }
 
