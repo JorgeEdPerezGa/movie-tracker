@@ -197,8 +197,9 @@ describe('helper', () => {
       }));
 
       const response = helper.registerUser(user);
+      const expected = Error('could not register user')
 
-      expect(response).resolves.toEqual(false);
+      expect(response).rejects.toEqual(expected);
     });
   });
 
@@ -303,7 +304,7 @@ describe('helper', () => {
     });
 
     it('should return an object if status code is okay', () => {
-      const response = helper.registerUser(user);
+      const response = helper.retrieveFavorites(user);
       const expected = {favorite: 'favorite'};
 
       expect(response).resolves.toEqual(expected);
@@ -315,9 +316,10 @@ describe('helper', () => {
         status: 500
       }));
 
-      const response = helper.registerUser(user);
+      const response = helper.retrieveFavorites(user);
+      const expected = Error('could not retrieve user favorites')
 
-      expect(response).resolves.toEqual(false);
+      expect(response).rejects.toEqual(expected);
     });
   });
 

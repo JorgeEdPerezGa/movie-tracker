@@ -10,7 +10,8 @@ export class Login extends Component {
     super();
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      error: false
     };
   }
 
@@ -23,17 +24,22 @@ export class Login extends Component {
 
   handleSubmit = async (event) => {
     event.preventDefault()
-    const retrievedUser = await postUser(this.state);
-    const userFavorites = await retrieveFavorites(retrievedUser.data.id)
+    try {
+      const retrievedUser = await postUser(this.state);
+      const userFavorites = await retrieveFavorites(retrievedUser.data.id)
+      this.handleRetrievedFavorites(userFavorites.data)
 
-    this.handleRetrievedFavorites(userFavorites.data)
-
-    if (!retrievedUser) {
-      alert('Email and password do not match');
-    } else {
       this.props.loginUser(retrievedUser.data);
       this.props.history.push('/')
+    } catch (err) {
+      this.setState({error: true})
     }
+  }
+
+  renderAlert = () => {
+    const { error } = this.state;
+    setTimeout(() => { this.setState({error: false}) }, 4000);
+    return error && ( <p>Could not find your account</p> );
   }
 
   handleRetrievedFavorites = (favorites) => {
@@ -43,7 +49,6 @@ export class Login extends Component {
        this.props.updateMovies(favorite);
     })
     this.props.addAllFavorites(cleanedFavorites)
-
   }
 
   render() {
@@ -71,6 +76,7 @@ export class Login extends Component {
             <button className='login-button'>ENTER</button>
           </div>
         </form>
+        {this.renderAlert()}
       </div>
     );
   }

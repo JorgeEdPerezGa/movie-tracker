@@ -25,12 +25,19 @@ ShallowWrapper {
         <p
           className="app-title-1"
 >
-          <span
-                    className="app-title-2"
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="home-nav"
+                    to="/"
           >
-                    MOVIE
-          </span>
-          TRACKER
+                    <span
+                              className="app-title-2"
+                    >
+                              MOVIE
+                    </span>
+                    TRACKER
+          </NavLink>
 </p>,
         <div
           className="menu"
@@ -70,32 +77,58 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <span
-              className="app-title-2"
+          "children": <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="home-nav"
+            to="/"
 >
-              MOVIE
-</span>,
-            "TRACKER",
-          ],
+            <span
+                        className="app-title-2"
+            >
+                        MOVIE
+            </span>
+            TRACKER
+</NavLink>,
           "className": "app-title-1",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "MOVIE",
-              "className": "app-title-2",
-            },
-            "ref": null,
-            "rendered": "MOVIE",
-            "type": "span",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <span
+                className="app-title-2"
+>
+                MOVIE
+</span>,
+              "TRACKER",
+            ],
+            "className": "home-nav",
+            "to": "/",
           },
-          "TRACKER",
-        ],
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "MOVIE",
+                "className": "app-title-2",
+              },
+              "ref": null,
+              "rendered": "MOVIE",
+              "type": "span",
+            },
+            "TRACKER",
+          ],
+          "type": [Function],
+        },
         "type": "p",
       },
       Object {
@@ -194,12 +227,19 @@ ShallowWrapper {
           <p
             className="app-title-1"
 >
-            <span
-                        className="app-title-2"
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        className="home-nav"
+                        to="/"
             >
-                        MOVIE
-            </span>
-            TRACKER
+                        <span
+                                    className="app-title-2"
+                        >
+                                    MOVIE
+                        </span>
+                        TRACKER
+            </NavLink>
 </p>,
           <div
             className="menu"
@@ -239,32 +279,58 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <span
-                className="app-title-2"
+            "children": <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="home-nav"
+              to="/"
 >
-                MOVIE
-</span>,
-              "TRACKER",
-            ],
+              <span
+                            className="app-title-2"
+              >
+                            MOVIE
+              </span>
+              TRACKER
+</NavLink>,
             "className": "app-title-1",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "MOVIE",
-                "className": "app-title-2",
-              },
-              "ref": null,
-              "rendered": "MOVIE",
-              "type": "span",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": Array [
+                <span
+                  className="app-title-2"
+>
+                  MOVIE
+</span>,
+                "TRACKER",
+              ],
+              "className": "home-nav",
+              "to": "/",
             },
-            "TRACKER",
-          ],
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "MOVIE",
+                  "className": "app-title-2",
+                },
+                "ref": null,
+                "rendered": "MOVIE",
+                "type": "span",
+              },
+              "TRACKER",
+            ],
+            "type": [Function],
+          },
           "type": "p",
         },
         Object {
@@ -396,12 +462,19 @@ ShallowWrapper {
         <p
           className="app-title-1"
 >
-          <span
-                    className="app-title-2"
+          <NavLink
+                    activeClassName="active"
+                    ariaCurrent="true"
+                    className="home-nav"
+                    to="/"
           >
-                    MOVIE
-          </span>
-          TRACKER
+                    <span
+                              className="app-title-2"
+                    >
+                              MOVIE
+                    </span>
+                    TRACKER
+          </NavLink>
 </p>,
         <div
           className="menu"
@@ -438,32 +511,58 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            <span
-              className="app-title-2"
+          "children": <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="home-nav"
+            to="/"
 >
-              MOVIE
-</span>,
-            "TRACKER",
-          ],
+            <span
+                        className="app-title-2"
+            >
+                        MOVIE
+            </span>
+            TRACKER
+</NavLink>,
           "className": "app-title-1",
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "MOVIE",
-              "className": "app-title-2",
-            },
-            "ref": null,
-            "rendered": "MOVIE",
-            "type": "span",
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <span
+                className="app-title-2"
+>
+                MOVIE
+</span>,
+              "TRACKER",
+            ],
+            "className": "home-nav",
+            "to": "/",
           },
-          "TRACKER",
-        ],
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "MOVIE",
+                "className": "app-title-2",
+              },
+              "ref": null,
+              "rendered": "MOVIE",
+              "type": "span",
+            },
+            "TRACKER",
+          ],
+          "type": [Function],
+        },
         "type": "p",
       },
       Object {
@@ -556,12 +655,19 @@ ShallowWrapper {
           <p
             className="app-title-1"
 >
-            <span
-                        className="app-title-2"
+            <NavLink
+                        activeClassName="active"
+                        ariaCurrent="true"
+                        className="home-nav"
+                        to="/"
             >
-                        MOVIE
-            </span>
-            TRACKER
+                        <span
+                                    className="app-title-2"
+                        >
+                                    MOVIE
+                        </span>
+                        TRACKER
+            </NavLink>
 </p>,
           <div
             className="menu"
@@ -598,32 +704,58 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": Array [
-              <span
-                className="app-title-2"
+            "children": <NavLink
+              activeClassName="active"
+              ariaCurrent="true"
+              className="home-nav"
+              to="/"
 >
-                MOVIE
-</span>,
-              "TRACKER",
-            ],
+              <span
+                            className="app-title-2"
+              >
+                            MOVIE
+              </span>
+              TRACKER
+</NavLink>,
             "className": "app-title-1",
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "MOVIE",
-                "className": "app-title-2",
-              },
-              "ref": null,
-              "rendered": "MOVIE",
-              "type": "span",
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "activeClassName": "active",
+              "ariaCurrent": "true",
+              "children": Array [
+                <span
+                  className="app-title-2"
+>
+                  MOVIE
+</span>,
+                "TRACKER",
+              ],
+              "className": "home-nav",
+              "to": "/",
             },
-            "TRACKER",
-          ],
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "MOVIE",
+                  "className": "app-title-2",
+                },
+                "ref": null,
+                "rendered": "MOVIE",
+                "type": "span",
+              },
+              "TRACKER",
+            ],
+            "type": [Function],
+          },
           "type": "p",
         },
         Object {
