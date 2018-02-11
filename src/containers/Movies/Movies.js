@@ -45,7 +45,7 @@ export class Movies extends Component {
 
   render() {
     return (
-      <div>
+      <div className='movie-list'>
         {this.displayMovies()}
       </div>
     );

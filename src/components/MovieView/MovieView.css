@@ -1,0 +1,39 @@
+.movie-view {
+  min-height: 110vh;
+  background: black; }
+
+.movie-poster-view {
+  position: absolute;
+  z-index: 1;
+  width: 180px;
+  top: 51%;
+  left: 15%; }
+
+.movie-backdrop {
+  position: absolute;
+  opacity: 0.5;
+  top: 15%;
+  right: 10%;
+  width: 80%; }
+
+.movie-view-description {
+  background: #393839;
+  position: absolute;
+  z-index: 1;
+  top: 80%;
+  left: 10%;
+  width: 80%; }
+
+.movie-title {
+  color: white;
+  font-size: 40px;
+  font-weight: 200;
+  margin-bottom: 12px; }
+
+.movie-overview {
+  color: white;
+  font-size: 17px;
+  font-weight: 100;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px; }
