@@ -3,7 +3,6 @@ export const addUser = user => ({
   user
 });
 
-
 export const logoutUser = user => ({
   type: 'LOGOUT_USER',
   user
@@ -13,7 +12,6 @@ export const addMovies = movies => ({
     type: 'ADD_MOVIES',
     movies
 });
-
 
 export const updateMovies = movie => ({
   type: 'UPDATE_MOVIES',
@@ -33,6 +31,10 @@ export const removeFavorite = movie => ({
 export const addAllFavorites = movies => ({
     type: 'ADD_ALL_FAVORITES',
     movies
+});
+
+export const clearFavorites = () => ({
+  type: 'CLEAR_FAVORITES'
 });
 
 

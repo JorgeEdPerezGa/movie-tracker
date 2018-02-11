@@ -97,7 +97,6 @@ describe('actions', () => {
         movie
       }
       expect(actions.removeFavorite(movie)).toEqual(expected)
-
     })
   })
 
@@ -118,10 +117,17 @@ describe('actions', () => {
         movies
       }
       expect(actions.addAllFavorites(movies)).toEqual(expected)
-
-
     })
   })
 
+  describe('clearFavorites', () => {
+    it('should return a type of CLEAR_FAVORITES', () => {
+      const expected = {
+        type: 'CLEAR_FAVORITES'
+      }
+
+      expect(actions.clearFavorites()).toEqual(expected);
+    })
+  })
 
 })

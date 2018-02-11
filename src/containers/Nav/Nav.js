@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { initialFetch, cleanMovies } from '../../helper';
-import { addMovies, logoutUser } from '../../actions';
+import { addMovies, logoutUser, clearFavorites } from '../../actions';
 import './Nav.css';
 
 export class Nav extends Component {
@@ -14,9 +14,10 @@ export class Nav extends Component {
   }
 
   handleLogoutUser = () => {
-    const { user, logoutUser } = this.props;
+    const { user, logoutUser, clearFavorites } = this.props;
 
     logoutUser(user);
+    clearFavorites();
   }
 
   render() {
@@ -66,7 +67,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addMovies: (movies) => dispatch(addMovies(movies)),
-  logoutUser: (user) => dispatch(logoutUser(user))
+  logoutUser: (user) => dispatch(logoutUser(user)),
+  clearFavorites: () => dispatch(clearFavorites())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);

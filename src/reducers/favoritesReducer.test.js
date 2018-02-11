@@ -53,4 +53,12 @@ describe('favoritesReducer', () => {
     expect(favoritesReducer(undefined, action)).toEqual(expected)
   })
 
+  it('CLEAR_FAVORITES should return the state with an empty array of favorites', () => {
+    const action = actions.clearFavorites();
+    const state = [movie1, movie2];
+    const expected = [];
+
+    expect(favoritesReducer(state, action)).toEqual(expected);
+  })
+
 })
