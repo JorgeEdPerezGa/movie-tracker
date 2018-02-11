@@ -5,18 +5,18 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Favorites
-    addFavorite={undefined}
+    addFavorite={[Function]}
     favorites={
         Array [
             Object {
-              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+              "backdrop_path": "/def.jpg",
               "favorite": true,
-              "movie_id": 354912,
+              "movie_id": 999,
               "overview": "Despite his family’s baffling generations-old ban on music",
-              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+              "poster_path": "/abs.jpg",
               "release_date": "2017-10-27",
-              "title": "Coco",
-              "vote_average": 7.7,
+              "title": "Thor",
+              "vote_average": 7.2,
             },
           ]
     }
@@ -47,14 +47,14 @@ ShallowWrapper {
         <MovieCard
           movie={
                     Object {
-                              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                              "backdrop_path": "/def.jpg",
                               "favorite": true,
-                              "movie_id": 354912,
+                              "movie_id": 999,
                               "overview": "Despite his family’s baffling generations-old ban on music",
-                              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+                              "poster_path": "/abs.jpg",
                               "release_date": "2017-10-27",
-                              "title": "Coco",
-                              "vote_average": 7.7,
+                              "title": "Thor",
+                              "vote_average": 7.2,
                             }
           }
           onFavorite={[Function]}
@@ -65,18 +65,18 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": "354912",
+        "key": "999",
         "nodeType": "function",
         "props": Object {
           "movie": Object {
-            "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+            "backdrop_path": "/def.jpg",
             "favorite": true,
-            "movie_id": 354912,
+            "movie_id": 999,
             "overview": "Despite his family’s baffling generations-old ban on music",
-            "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+            "poster_path": "/abs.jpg",
             "release_date": "2017-10-27",
-            "title": "Coco",
-            "vote_average": 7.7,
+            "title": "Thor",
+            "vote_average": 7.2,
           },
           "onFavorite": [Function],
         },
@@ -97,14 +97,14 @@ ShallowWrapper {
           <MovieCard
             movie={
                         Object {
-                                    "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                                    "backdrop_path": "/def.jpg",
                                     "favorite": true,
-                                    "movie_id": 354912,
+                                    "movie_id": 999,
                                     "overview": "Despite his family’s baffling generations-old ban on music",
-                                    "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+                                    "poster_path": "/abs.jpg",
                                     "release_date": "2017-10-27",
-                                    "title": "Coco",
-                                    "vote_average": 7.7,
+                                    "title": "Thor",
+                                    "vote_average": 7.2,
                                   }
             }
             onFavorite={[Function]}
@@ -115,18 +115,18 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": "354912",
+          "key": "999",
           "nodeType": "function",
           "props": Object {
             "movie": Object {
-              "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+              "backdrop_path": "/def.jpg",
               "favorite": true,
-              "movie_id": 354912,
+              "movie_id": 999,
               "overview": "Despite his family’s baffling generations-old ban on music",
-              "poster_path": "/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
+              "poster_path": "/abs.jpg",
               "release_date": "2017-10-27",
-              "title": "Coco",
-              "vote_average": 7.7,
+              "title": "Thor",
+              "vote_average": 7.2,
             },
             "onFavorite": [Function],
           },
