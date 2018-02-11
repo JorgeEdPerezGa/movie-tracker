@@ -37,3 +37,16 @@
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 30px; }
+
+.favorite-button-movie-view {
+  background: url("../../assets/favorite.svg");
+  border: none;
+  top: 83%;
+  left: 85%;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+  position: absolute; }
+  .favorite-button-movie-view:hover {
+    background: url("../../assets/favorite-selected.svg");
+    cursor: pointer; }

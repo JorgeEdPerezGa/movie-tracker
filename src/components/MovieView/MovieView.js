@@ -19,8 +19,8 @@ const MovieView = ({ movie, onFavorite }) => {
         className='movie-backdrop' src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}/>
       <button
         onClick={()=> onFavorite(movie)}
-        className='favorite-button'
-        >&#9829;</button>
+        className='favorite-button-movie-view'
+        ></button>
     </article>
   );
 };
