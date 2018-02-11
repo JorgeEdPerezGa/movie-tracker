@@ -44,16 +44,107 @@ describe('helper', () => {
     });
   });
 
-  describe.skip('cleanMovies', () => {
+  describe('cleanMovies', () => {
+    let uncleaned;
+    let expected;
+
+    beforeAll(() => {
+      uncleaned = {
+        results: [
+          { 
+            adult: false,
+            backdrop_path: "/dddddd.jpg",
+            genre_ids: [12, 16, 35, 10751],
+            id: 354912,
+            original_language: "en",
+            original_title: "Coco",
+            overview: "Despite his famil...",
+            popularity: 207.580955,
+            poster_path: "/ffff.jpg",
+            release_date: "2017-10-27",
+            title: "Coco",
+            video: false,
+            vote_average: 7.7
+          },
+          { 
+            adult: false,
+            backdrop_path: "/zxc.jpg",
+            genre_ids: [123, 10751],
+            id: 99999,
+            original_language: "sp",
+            original_title: "Nono",
+            overview: "Hellooooo there...",
+            popularity: 207.580955,
+            poster_path: "/phd.jpg",
+            release_date: "2011-11-21",
+            title: "Nono",
+            video: false,
+            vote_average: 1.7
+          }
+        ]
+      };
+
+      expected = [
+        {
+          "backdrop_path": "/dddddd.jpg",
+          "movie_id": 354912,
+          "overview": "Despite his famil...",
+          "poster_path": "/ffff.jpg",
+          "release_date": "2017-10-27",
+          "title": "Coco",
+          "vote_average": 7.7,
+        },
+        {
+          "backdrop_path": "/zxc.jpg",
+          "movie_id": 99999,
+          "overview": "Hellooooo there...",
+          "poster_path": "/phd.jpg",
+          "release_date": "2011-11-21",
+          "title": "Nono",
+          "vote_average": 1.7,
+        },
+      ];
+
+    });
 
     it('should return an array of clean objects', () => {
-
+      const result = helper.cleanMovies(uncleaned);
+      expect(result).toEqual(expected);
     });
   });
 
-  describe.skip('clean favorites', () => {
-    it('should return an array and assign a favorite value of true or false on each element', () => {
+  describe('cleanFavorites', () => {
+    let favorites;
+    let expected;
+    beforeAll(() => {
+      favorites = [
+        {
+          "backdrop_path": "/dddddd.jpg",
+          "movie_id": 354912,
+          "overview": "Despite his famil...",
+          "poster_path": "/ffff.jpg",
+          "release_date": "2017-10-27",
+          "title": "Coco",
+          "vote_average": 7.7,
+        }
+      ];
+      expected = [
+        {
+          "backdrop_path": "/dddddd.jpg",
+          "movie_id": 354912,
+          "overview": "Despite his famil...",
+          "poster_path": "/ffff.jpg",
+          "release_date": "2017-10-27",
+          "title": "Coco",
+          "vote_average": 7.7,
+          "favorite": true
+        }
+      ];
+    });
 
+    it('should return an array and assign a favorite value of true or false on each element', () => {
+      const result = helper.cleanFavorites(favorites);
+      expect(result).toEqual(expected);
     });
   });
 

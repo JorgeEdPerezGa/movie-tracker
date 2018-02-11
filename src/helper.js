@@ -15,10 +15,9 @@ export const initialFetch = async() => {
 };
 
 export const cleanMovies = (response) => {
-  const movies = response.results.map(({ title, overview, poster_path, backdrop_path, id, vote_average, release_date }) => {
+  return response.results.map(({ title, overview, poster_path, backdrop_path, id, vote_average, release_date }) => {
     return { title, overview, poster_path, backdrop_path, movie_id: id, vote_average, release_date };
   });
-  return Promise.all(movies);
 };
 
 export const cleanFavorites = (favorites) => {
