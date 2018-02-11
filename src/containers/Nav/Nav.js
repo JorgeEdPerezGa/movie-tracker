@@ -13,8 +13,10 @@ export class Nav extends Component {
     this.props.addMovies(movies);
   }
 
-  logoutUser = (user) => {
-    this.props.logoutUser(user);
+  handleLogoutUser = () => {
+    const { user, logoutUser } = this.props;
+
+    logoutUser(user);
   }
 
   render() {
@@ -23,7 +25,7 @@ export class Nav extends Component {
         <nav className='nav-menu'>
           <NavLink className='nav' to='/movies'>Movies</NavLink>
           <NavLink className='nav' to='/favorites'>Favorites</NavLink>
-          <button onClick={this.logoutUser}>Logout</button>
+          <button onClick={this.handleLogoutUser}>Logout</button>
         </nav>
       );
     }
