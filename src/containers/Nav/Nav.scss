@@ -1,6 +1,8 @@
 .nav-menu {
-  background-color: purple;
+  background-color: #393839;
+  display: flex;
   padding: 20px;
+  justify-content: space-between;
 }
 
 .nav {
@@ -8,6 +10,24 @@
   text-decoration-line: none;
 }
 
+.menu {
+  width: 60%;
+  font-size: 17px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .active {
   color: lightblue;
+}
+
+.app-title-1 {
+  font-size: 20px;
+  margin: 0;
+  color: white;
+  font-weight: 400;
+}
+
+.app-title-2 {
+ color: #83cdff;
 }
