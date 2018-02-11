@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { addUser } from '../../actions';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addUser } from '../../actions';
 import { registerUser } from '../../helper';
 import './Register.css';
 
@@ -111,5 +112,10 @@ const mapStateToProps = (store) => ({
 const mapDispatchToProps = (dispatch) => ({
   addUser: (user) => dispatch(addUser(user))
 });
+
+Register.propTypes = {
+  user: PropTypes.object,
+  addUser: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);

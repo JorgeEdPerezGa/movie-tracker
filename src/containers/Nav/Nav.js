@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { initialFetch, cleanMovies } from '../../helper';
 import { addMovies, logoutUser, clearFavorites } from '../../actions';
 import './Nav.css';
@@ -70,5 +71,12 @@ const mapDispatchToProps = (dispatch) => ({
   logoutUser: (user) => dispatch(logoutUser(user)),
   clearFavorites: () => dispatch(clearFavorites())
 });
+
+Nav.propTypes = {
+  user: PropTypes.object,
+  addMovies: PropTypes.func,
+  logoutUser: PropTypes.func,
+  clearFavorites: PropTypes.func
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nav);
