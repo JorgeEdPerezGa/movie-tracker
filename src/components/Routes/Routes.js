@@ -6,7 +6,7 @@ import Nav from '../../containers/Nav/Nav';
 import Login from '../../containers/Login/Login';
 import Register from '../../containers/Register/Register';
 import { connect } from 'react-redux';
-import MovieCard from '../MovieCard/MovieCard';
+import MovieView from '../MovieView/MovieView';
 
 export const Routes = (props) => {
 
@@ -27,7 +27,7 @@ export const Routes = (props) => {
         });
 
         if (movie) {
-          return ( <MovieCard movie = {movie}/> );
+          return ( <MovieView movie = {movie}/> );
         }
       }} />
 
