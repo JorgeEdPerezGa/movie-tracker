@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import './MovieView.css';
 
 const MovieView = ({ movie, onFavorite }) => {
-  const { title, overview, poster_path, backdrop_path, movie_id } = movie
+  const { title, overview, poster_path, backdrop_path } = movie;
   return (
     <article className='movie-view'>
       <div className='movie-view-description'>
