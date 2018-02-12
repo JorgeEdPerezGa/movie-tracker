@@ -35,7 +35,7 @@
   font-size: 15px; }
   .login-button:hover {
     cursor: pointer;
-    background: #e7eff7;
+    background: #ffffff;
     color: #090e12; }
   .login-button:disabled {
     background: #7a8389;

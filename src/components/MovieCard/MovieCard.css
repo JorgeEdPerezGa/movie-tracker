@@ -20,8 +20,10 @@
   width: 35px;
   height: 35px; }
   .favorite-button:hover {
-    background: url("../../assets/favorite-selected.svg");
+    background: url("../../assets/favorite-hover.svg");
     cursor: pointer; }
 
 .favorite-selected {
   background: url("../../assets/favorite-selected.svg"); }
+  .favorite-selected:hover {
+    background: url("../../assets/favorite-selected.svg"); }
