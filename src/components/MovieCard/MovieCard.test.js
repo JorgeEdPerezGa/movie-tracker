@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import MovieCard from './MovieCard';
 
@@ -20,18 +19,18 @@ describe('MovieCard', () => {
       vote_average: 7.7
     };
     mockOnFavorite = jest.fn();
-  })
+  });
 
   beforeEach(() => {
-    renderedComponent = shallow(<MovieCard key={1} movie={mockMovie} onFavorite={mockOnFavorite} />)
-  })
+    renderedComponent = shallow(<MovieCard key={1} movie={mockMovie} onFavorite={mockOnFavorite} />);
+  });
 
   it('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
-  })
+  });
 
   it('should call onFavorite when button is clicked', () => {
     renderedComponent.find('button').simulate('click');
     expect(mockOnFavorite.mock.calls.length).toEqual(1);
-  })
-})
+  });
+});

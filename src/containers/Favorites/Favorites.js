@@ -15,14 +15,12 @@ export class Favorites extends Component {
   }
 
    handleFavorites = (movie) => {
-    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);
+     const duplicated = this.props.favorites.some(fav => movie.title === fav.title);
+     const favMovie = {...movie, favorite: !movie.favorite};
 
-    const favMovie = {...movie, favorite: !movie.favorite};
-
-    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie);
-
-    this.props.updateMovies(favMovie);
-  }
+     duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie);
+     this.props.updateMovies(favMovie);
+   }
 
   addFavMovie = (movie) => {
     this.props.addFavorite(movie);
@@ -31,7 +29,7 @@ export class Favorites extends Component {
 
   removeFavMovie = (movie) => {
     this.props.removeFavorite(movie);
-    deleteFavorite(movie, this.props.user)
+    deleteFavorite(movie, this.props.user);
   }
 
   render() {
@@ -52,7 +50,7 @@ const mapDispatchToProps = (dispatch) => ({
   addFavorite: movie => dispatch(addFavorite(movie)),
   removeFavorite: movie => dispatch(removeFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
-})
+});
 
 Favorites.propTypes = {
   favorites: PropTypes.array,

@@ -20,18 +20,15 @@ export const Routes = (props) => {
       <Route exact path='/favorites' component={Favorites} />
       <Route exact path='/login' component={Login} />
       <Route exact path='/register' component={Register} />
-
       <Route exact path='/movies/:id' render={({ match }) => {
         const { id } = match.params;
         const movie = props.movies.find( movie => {
           return movie.movie_id === parseInt(id);
         });
-
         if (movie) {
           return ( <MovieView movie={movie} /> );
         }
       }} />
-
     </div>
   );
 };

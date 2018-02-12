@@ -2,7 +2,7 @@ import * as helper from './helper';
 import key from './api/key.js';
 
 describe('helper', () => {
- 
+
   describe('initialFetch', () => {
 
     beforeAll(() => {
@@ -51,7 +51,7 @@ describe('helper', () => {
     beforeAll(() => {
       uncleaned = {
         results: [
-          { 
+          {
             adult: false,
             backdrop_path: "/dddddd.jpg",
             genre_ids: [12, 16, 35, 10751],
@@ -66,7 +66,7 @@ describe('helper', () => {
             video: false,
             vote_average: 7.7
           },
-          { 
+          {
             adult: false,
             backdrop_path: "/zxc.jpg",
             genre_ids: [123, 10751],
@@ -92,7 +92,7 @@ describe('helper', () => {
           "poster_path": "/ffff.jpg",
           "release_date": "2017-10-27",
           "title": "Coco",
-          "vote_average": 7.7,
+          "vote_average": 7.7
         },
         {
           "backdrop_path": "/zxc.jpg",
@@ -101,8 +101,8 @@ describe('helper', () => {
           "poster_path": "/phd.jpg",
           "release_date": "2011-11-21",
           "title": "Nono",
-          "vote_average": 1.7,
-        },
+          "vote_average": 1.7
+        }
       ];
 
     });
@@ -125,7 +125,7 @@ describe('helper', () => {
           "poster_path": "/ffff.jpg",
           "release_date": "2017-10-27",
           "title": "Coco",
-          "vote_average": 7.7,
+          "vote_average": 7.7
         }
       ];
       expected = [
@@ -192,12 +192,12 @@ describe('helper', () => {
     });
 
     it('should throw an error if status code is not okay', () => {
-       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 500
       }));
 
       const response = helper.registerUser(user);
-      const expected = Error('could not register user')
+      const expected = Error('could not register user');
 
       expect(response).rejects.toEqual(expected);
     });
@@ -263,7 +263,6 @@ describe('helper', () => {
   });
 
   describe('retrieve favorite', () => {
-    let movie;
     let user;
 
     beforeAll(() => {
@@ -273,17 +272,6 @@ describe('helper', () => {
           favorite: 'favorite'
         })
       }));
-
-      movie = {
-        'movie_id': '354912',
-        'user_id': '1',
-        'title': "Coco",
-        'poster_path': "/b.jpg",
-        'release_date': "2017-10-27",
-        'vote_average': '7.7',
-        'overview': "Despite his family’s baffling generations-old ban on music...",
-        'backdrop_path': "/a.jpg"
-      };
 
       user = {
         email: "fake@123.com",
@@ -312,12 +300,12 @@ describe('helper', () => {
     });
 
     it('should throw an error if status code is not okay', () => {
-       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 500
       }));
 
       const response = helper.retrieveFavorites(user);
-      const expected = Error('could not retrieve user favorites')
+      const expected = Error('could not retrieve user favorites');
 
       expect(response).rejects.toEqual(expected);
     });
@@ -368,7 +356,7 @@ describe('helper', () => {
     });
 
     it('should throw an error if status code is not okay', () => {
-       window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
         status: 500
       }));
 
@@ -378,5 +366,4 @@ describe('helper', () => {
       expect(response).rejects.toEqual(expected);
     });
   });
-
 });

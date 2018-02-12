@@ -57,6 +57,7 @@ ShallowWrapper {
                     />
                     <button
                               className="login-button"
+                              disabled={true}
                     >
                               ENTER
                     </button>
@@ -106,6 +107,7 @@ ShallowWrapper {
             />
             <button
                         className="login-button"
+                        disabled={true}
             >
                         ENTER
             </button>
@@ -138,6 +140,7 @@ ShallowWrapper {
 />,
               <button
                 className="login-button"
+                disabled={true}
 >
                 ENTER
 </button>,
@@ -185,6 +188,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "ENTER",
                 "className": "login-button",
+                "disabled": true,
               },
               "ref": null,
               "rendered": "ENTER",
@@ -236,6 +240,7 @@ ShallowWrapper {
                         />
                         <button
                                     className="login-button"
+                                    disabled={true}
                         >
                                     ENTER
                         </button>
@@ -285,6 +290,7 @@ ShallowWrapper {
               />
               <button
                             className="login-button"
+                            disabled={true}
               >
                             ENTER
               </button>
@@ -317,6 +323,7 @@ ShallowWrapper {
 />,
                 <button
                   className="login-button"
+                  disabled={true}
 >
                   ENTER
 </button>,
@@ -364,6 +371,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "ENTER",
                   "className": "login-button",
+                  "disabled": true,
                 },
                 "ref": null,
                 "rendered": "ENTER",
@@ -446,13 +454,16 @@ ShallowWrapper {
                     />
                     <button
                               className="login-button"
+                              disabled={true}
                     >
                               ENTER
                     </button>
           </div>
 </form>,
-        <p>
-          Could not find your account
+        <p
+          className="error-message"
+>
+          Could not find your account!
 </p>,
       ],
       "className": "login",
@@ -497,6 +508,7 @@ ShallowWrapper {
             />
             <button
                         className="login-button"
+                        disabled={true}
             >
                         ENTER
             </button>
@@ -529,6 +541,7 @@ ShallowWrapper {
 />,
               <button
                 className="login-button"
+                disabled={true}
 >
                 ENTER
 </button>,
@@ -576,6 +589,7 @@ ShallowWrapper {
               "props": Object {
                 "children": "ENTER",
                 "className": "login-button",
+                "disabled": true,
               },
               "ref": null,
               "rendered": "ENTER",
@@ -591,10 +605,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "Could not find your account",
+          "children": "Could not find your account!",
+          "className": "error-message",
         },
         "ref": null,
-        "rendered": "Could not find your account",
+        "rendered": "Could not find your account!",
         "type": "p",
       },
     ],
@@ -637,13 +652,16 @@ ShallowWrapper {
                         />
                         <button
                                     className="login-button"
+                                    disabled={true}
                         >
                                     ENTER
                         </button>
             </div>
 </form>,
-          <p>
-            Could not find your account
+          <p
+            className="error-message"
+>
+            Could not find your account!
 </p>,
         ],
         "className": "login",
@@ -688,6 +706,7 @@ ShallowWrapper {
               />
               <button
                             className="login-button"
+                            disabled={true}
               >
                             ENTER
               </button>
@@ -720,6 +739,7 @@ ShallowWrapper {
 />,
                 <button
                   className="login-button"
+                  disabled={true}
 >
                   ENTER
 </button>,
@@ -767,6 +787,7 @@ ShallowWrapper {
                 "props": Object {
                   "children": "ENTER",
                   "className": "login-button",
+                  "disabled": true,
                 },
                 "ref": null,
                 "rendered": "ENTER",
@@ -782,10 +803,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "Could not find your account",
+            "children": "Could not find your account!",
+            "className": "error-message",
           },
           "ref": null,
-          "rendered": "Could not find your account",
+          "rendered": "Could not find your account!",
           "type": "p",
         },
       ],

@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Favorites } from './Favorites';
-
-import helper, { mockHelper } from '../../helper'
-jest.mock('../../helper')
+jest.mock('../../helper');
 
 describe('Favorites', () => {
 
@@ -15,7 +12,7 @@ describe('Favorites', () => {
   let mockUpdateMovies;
   let renderedComponent;
   let mockMovie;
-  
+
   beforeAll(() => {
     mockMovie = {
       backdrop_path: "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
@@ -26,7 +23,7 @@ describe('Favorites', () => {
       title: "Coco",
       vote_average: 7.7,
       favorite: false
-    }
+    };
 
     mockUser = {
       email: "fake@123.com",
@@ -34,13 +31,13 @@ describe('Favorites', () => {
       name: "ted",
       password: "pw123"
     };
-  })
+  });
 
   beforeEach(() => {
     mockRemoveFavorite = jest.fn();
     mockAddFavorite = jest.fn();
     mockUpdateMovies = jest.fn();
-    window.fetch = jest.fn()
+    window.fetch = jest.fn();
 
     mockFavorites = [
       {
@@ -56,7 +53,7 @@ describe('Favorites', () => {
     ];
 
     renderedComponent = shallow(
-      <Favorites 
+      <Favorites
         favorites={mockFavorites}
         user={mockUser}
         addFavorite={mockAddFavorite}
@@ -64,31 +61,31 @@ describe('Favorites', () => {
         updateMovies={mockUpdateMovies}
       />
     );
-  })
+  });
 
   it('should match snapshot', () => {
     expect(renderedComponent).toMatchSnapshot();
-  })
+  });
 
   it('when removeFavMovie is called removeFavorite and deleteFavorite should be called with expected params', () => {
-    expect(mockRemoveFavorite).not.toHaveBeenCalled()
-    expect(window.fetch).not.toHaveBeenCalled()
-    
+    expect(mockRemoveFavorite).not.toHaveBeenCalled();
+    expect(window.fetch).not.toHaveBeenCalled();
+
     renderedComponent.instance().removeFavMovie(mockMovie);
 
-    expect(mockRemoveFavorite).toHaveBeenCalledWith(mockMovie)
-    expect(window.fetch).toHaveBeenCalledWith( mockMovie, mockUser)
-  })
+    expect(mockRemoveFavorite).toHaveBeenCalledWith(mockMovie);
+    expect(window.fetch).toHaveBeenCalledWith(mockMovie, mockUser);
+  });
 
   it('when addFavMovie is called addFavorite and postFavorite should be called with expected params', () => {
-    expect(mockAddFavorite).not.toHaveBeenCalled()
-    expect(window.fetch).not.toHaveBeenCalled()
-    
+    expect(mockAddFavorite).not.toHaveBeenCalled();
+    expect(window.fetch).not.toHaveBeenCalled();
+
     renderedComponent.instance().addFavMovie(mockMovie);
 
-    expect(mockAddFavorite).toHaveBeenCalledWith(mockMovie)
-    expect(window.fetch).toHaveBeenCalledWith(mockMovie, mockUser)
-  })
+    expect(mockAddFavorite).toHaveBeenCalledWith(mockMovie);
+    expect(window.fetch).toHaveBeenCalledWith(mockMovie, mockUser);
+  });
 
   it('when user favorites a card and it is already in favorites, it should call removeFavMovie', () => {
     const expected = {...mockFavorites[0], favorite: false};
@@ -96,7 +93,7 @@ describe('Favorites', () => {
     expect(mockRemoveFavorite).not.toHaveBeenCalled();
     renderedComponent.instance().handleFavorites(mockFavorites[0]);
     expect(mockRemoveFavorite).toHaveBeenCalledWith(expected);
-  })
+  });
 
   it('when user favorites a card and it is not in Favorites, it should call addFavMovie', () => {
     const expected = {...mockMovie, favorite: true};
@@ -104,13 +101,13 @@ describe('Favorites', () => {
     expect(mockAddFavorite).not.toHaveBeenCalled();
     renderedComponent.instance().handleFavorites(mockMovie);
     expect(mockAddFavorite).toHaveBeenCalledWith(expected);
-  })
+  });
 
   it('when user favorites a card it should update Movies', () => {
     const expected = {...mockMovie, favorite: true};
-    
+
     expect(mockUpdateMovies).not.toHaveBeenCalled();
     renderedComponent.instance().handleFavorites(mockMovie);
     expect(mockUpdateMovies).toHaveBeenCalledWith(expected);
-  })
-})
+  });
+});

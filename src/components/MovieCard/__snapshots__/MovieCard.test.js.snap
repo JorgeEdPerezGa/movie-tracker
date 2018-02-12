@@ -31,16 +31,6 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <p
-          className="movie-title"
->
-          Coco
-</p>,
-        <p
-          className="movie-overview"
->
-          Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.
-</p>,
         <Link
           replace={false}
           to="/movies/354912"
@@ -50,45 +40,19 @@ ShallowWrapper {
                     src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
           />
 </Link>,
-        <img
-          className="movie-backdrop"
-          src="https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg"
-/>,
-        <button
-          className="favorite-button"
-          onClick={[Function]}
+        <div
+          className="button-container"
 >
-          ♥
-</button>,
+          <button
+                    className="favorite-button "
+                    onClick={[Function]}
+          />
+</div>,
       ],
-      "className": "movie-card",
+      "className": "movie-card-main",
     },
     "ref": null,
     "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Coco",
-          "className": "movie-title",
-        },
-        "ref": null,
-        "rendered": "Coco",
-        "type": "p",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.",
-          "className": "movie-overview",
-        },
-        "ref": null,
-        "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.",
-        "type": "p",
-      },
       Object {
         "instance": null,
         "key": undefined,
@@ -121,25 +85,26 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "className": "movie-backdrop",
-          "src": "https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+          "children": <button
+            className="favorite-button "
+            onClick={[Function]}
+/>,
+          "className": "button-container",
         },
         "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "♥",
-          "className": "favorite-button",
-          "onClick": [Function],
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "className": "favorite-button ",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "button",
         },
-        "ref": null,
-        "rendered": "♥",
-        "type": "button",
+        "type": "div",
       },
     ],
     "type": "article",
@@ -151,16 +116,6 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <p
-            className="movie-title"
->
-            Coco
-</p>,
-          <p
-            className="movie-overview"
->
-            Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.
-</p>,
           <Link
             replace={false}
             to="/movies/354912"
@@ -170,45 +125,19 @@ ShallowWrapper {
                         src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
             />
 </Link>,
-          <img
-            className="movie-backdrop"
-            src="https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg"
-/>,
-          <button
-            className="favorite-button"
-            onClick={[Function]}
+          <div
+            className="button-container"
 >
-            ♥
-</button>,
+            <button
+                        className="favorite-button "
+                        onClick={[Function]}
+            />
+</div>,
         ],
-        "className": "movie-card",
+        "className": "movie-card-main",
       },
       "ref": null,
       "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Coco",
-            "className": "movie-title",
-          },
-          "ref": null,
-          "rendered": "Coco",
-          "type": "p",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.",
-            "className": "movie-overview",
-          },
-          "ref": null,
-          "rendered": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz.",
-          "type": "p",
-        },
         Object {
           "instance": null,
           "key": undefined,
@@ -241,25 +170,26 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "movie-backdrop",
-            "src": "https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+            "children": <button
+              className="favorite-button "
+              onClick={[Function]}
+/>,
+            "className": "button-container",
           },
           "ref": null,
-          "rendered": null,
-          "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "♥",
-            "className": "favorite-button",
-            "onClick": [Function],
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "favorite-button ",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "button",
           },
-          "ref": null,
-          "rendered": "♥",
-          "type": "button",
+          "type": "div",
         },
       ],
       "type": "article",

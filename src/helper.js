@@ -43,7 +43,7 @@ export const registerUser = async user => {
       return await register.json();
     }
   } catch (error) {
-    throw(error);
+    throw (error);
   }
 };
 
@@ -96,25 +96,24 @@ export const postFavorite = async (movie, user) => {
       return await posted.json();
     }
   } catch (error) {
-    throw error
+    throw error;
   }
 };
 
 export const retrieveFavorites = async userId => {
   try {
     const url=`api/users/${userId}/favorites/`;
-    const retrieved = await fetch(url)
+    const retrieved = await fetch(url);
 
     if (initialFetch.status > 200) {
       throw new Error('could not fetch favorites');
     } else {
       return await retrieved.json();
     }
+  } catch (error) {
+    throw new Error('could not retrieve user favorites');
   }
-  catch(error) {
-    throw new Error('could not retrieve user favorites')
-  }
-}
+};
 
 export const deleteFavorite = async ({ movie_id  }, { id }) => {
   try {

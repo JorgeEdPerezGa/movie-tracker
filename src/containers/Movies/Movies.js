@@ -20,16 +20,12 @@ export class Movies extends Component {
 
   handleFavorites = (movie) => {
     if (!this.props.user.name) {
-      console.log(this.props.history.push)
       return this.props.history.push('/login');
     }
-
     const duplicated = this.props.favorites.some(fav => movie.title === fav.title);
-
     const favMovie = {...movie, favorite: !movie.favorite};
 
     duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie);
-
     this.props.updateMovies(favMovie);
   }
 
@@ -62,9 +58,10 @@ const mapDispatchToProps = (dispatch) => ({
   addFavorite: movie => dispatch(addFavorite(movie)),
   removeFavorite: movie => dispatch(removeFavorite(movie)),
   updateMovies: movie => dispatch(updateMovies(movie))
-})
+});
 
 Movies.propTypes = {
+  history: PropTypes.object,
   movies: PropTypes.array,
   favorites: PropTypes.array,
   user: PropTypes.object,
