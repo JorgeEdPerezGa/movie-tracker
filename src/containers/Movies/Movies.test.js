@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
 import { Movies } from './Movies';
 import { createMemoryHistory } from 'history';
-import helper, { mockHelper } from '../../helper';
 jest.mock('../../helper');
 
 describe('Movies', () => {
@@ -127,11 +125,11 @@ describe('Movies', () => {
         updateMovies={mockUpdateMovies}
         history={history}
       />
-    )
+    );
 
     renderedComponent.instance().handleFavorites(mockMovie);
     expect(renderedComponent).toMatchSnapshot();
-  })
+  });
 
   it('when user favorites a card and it is already in favorites, it should call removeFavMovie', () => {
     const expected = {...mockFavorites[0], favorite: false};
