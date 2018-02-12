@@ -14,12 +14,12 @@ export class Favorites extends Component {
     });
   }
 
-  handleFavorites = (movie) => {
-    const duplicated = this.props.favorites.some(fav => movie.title === fav.title); 
+   handleFavorites = (movie) => {
+    const duplicated = this.props.favorites.some(fav => movie.title === fav.title);
 
     const favMovie = {...movie, favorite: !movie.favorite};
 
-    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie); 
+    duplicated ? this.removeFavMovie(favMovie) :this.addFavMovie(favMovie);
 
     this.props.updateMovies(favMovie);
   }
@@ -36,7 +36,7 @@ export class Favorites extends Component {
 
   render() {
     return (
-      <div>
+      <div className='movie-list'>
         { this.renderFavorites() }
       </div>
     );

@@ -39,7 +39,7 @@ export class Login extends Component {
 
   renderAlert = () => {
     const { error } = this.state;
-    setTimeout(() => { this.setState({error: false}) }, 4000);
+    setTimeout(() => { this.setState({error: false}); }, 10000);
     return error && ( <p className='error-message'>Could not find your account!</p> );
   }
 

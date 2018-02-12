@@ -1,4 +1,5 @@
 .movie-list {
+  justify-content: center;
   display: flex;
   background: #0c0c0c;
   flex-wrap: wrap;
