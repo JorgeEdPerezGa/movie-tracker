@@ -34,9 +34,9 @@ export class Nav extends Component {
             </NavLink>
           </p>
           <div className='menu'>
-            <NavLink className='nav' to='/movies'>Movies</NavLink>
-            <NavLink className='nav' to='/favorites'>Favorites</NavLink>
-            <button onClick={this.handleLogoutUser}>Logout</button>
+            <NavLink className='nav' to='/movies'>MOVIES</NavLink>
+            <NavLink className='nav' to='/favorites'>FAVORITES</NavLink>
+            <button onClick={this.handleLogoutUser}>LOGOUT</button>
           </div>
         </nav>
       );
@@ -53,9 +53,9 @@ export class Nav extends Component {
           </NavLink>
         </p>
         <div className='menu'>
-          <NavLink className='nav' to='/movies'>Movies</NavLink>
-          <NavLink className='nav' to='/login'>Login</NavLink>
-          <NavLink className='nav' to='/register'>Register</NavLink>
+          <NavLink className='nav' to='/movies'>MOVIES</NavLink>
+          <NavLink className='nav' to='/login'>LOGIN</NavLink>
+          <NavLink className='nav' to='/register'>REGISTER</NavLink>
         </div>
       </nav>
     );
