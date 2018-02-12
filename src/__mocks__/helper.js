@@ -1,5 +1,5 @@
-export const deleteFavorite = (movie, user) => fetch(movie, user)
-export const postFavorite = (movie, user) => fetch(movie, user)
+export const deleteFavorite = (movie, user) => fetch(movie, user);
+export const postFavorite = (movie, user) => fetch(movie, user);
 export const cleanFavorites = () => {
   return [
     {
@@ -13,9 +13,9 @@ export const cleanFavorites = () => {
       "favorite": true
     }
   ];
-}
+};
 export const postUser = (user) => {
-  fetch(user)
+  fetch(user);
   return {
     data: {
       email: "fake@123.com",
@@ -23,11 +23,11 @@ export const postUser = (user) => {
       name: "ted",
       password: "pw123"
     }
-  }
-}
+  };
+};
 
 export const retrieveFavorites = (userId) => {
-  fetch(userId)
+  fetch(userId);
   return [
     {
       "backdrop_path": "/dddddd.jpg",
@@ -39,12 +39,12 @@ export const retrieveFavorites = (userId) => {
       "vote_average": 7.7,
       "favorite": true
     }
-  ]
-}
+  ];
+};
 
 export const registerUser = (user) => {
-  fetch(user)
+  fetch(user);
   return {
     error: 'message'
-  }
-}
+  };
+};
