@@ -12,7 +12,7 @@ const MovieView = ({ movie }) => {
         <p className='movie-overview'>{ overview }</p>
       </div>
       <img
-        className='movie-poster-view' src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+        className='movie-poster-view' src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={`${title} poster`}/>
       <Link to={`/movies`}>
         <button className='back-to-movies-button'></button>
       </Link>
