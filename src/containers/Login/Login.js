@@ -63,7 +63,7 @@ export class Login extends Component {
               className='login-input'
               placeholder='email'
               name='email'
-              type='text'
+              type='email'
               value={this.state.email}
               onChange = {this.handleChange}/>
             <input
