@@ -19,6 +19,7 @@ export class Nav extends Component {
 
     logoutUser(user);
     clearFavorites();
+    this.props.history.push('/movies');
   }
 
   render() {
@@ -73,6 +74,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Nav.propTypes = {
+  history: PropTypes.object,
   user: PropTypes.object,
   addMovies: PropTypes.func,
   logoutUser: PropTypes.func,
