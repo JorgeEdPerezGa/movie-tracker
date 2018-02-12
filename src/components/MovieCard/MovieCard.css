@@ -22,3 +22,6 @@
   .favorite-button:hover {
     background: url("../../assets/favorite-selected.svg");
     cursor: pointer; }
+
+.favorite-selected {
+  background: url("../../assets/favorite-selected.svg"); }
