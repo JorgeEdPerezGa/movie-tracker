@@ -438,6 +438,11 @@ ShallowWrapper {
   Symbol(enzyme.__unrendered__): <Nav
     addMovies={[Function]}
     clearFavorites={[Function]}
+    history={
+        Object {
+            "push": [Function],
+          }
+    }
     logoutUser={[Function]}
     user={
         Object {

@@ -36,6 +36,7 @@ ShallowWrapper {
           to="/movies/354912"
 >
           <img
+                    alt="Coco poster"
                     className="movie-poster"
                     src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
           />
@@ -59,6 +60,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "children": <img
+            alt="Coco poster"
             className="movie-poster"
             src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
 />,
@@ -71,6 +73,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "Coco poster",
             "className": "movie-poster",
             "src": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
           },
@@ -121,6 +124,7 @@ ShallowWrapper {
             to="/movies/354912"
 >
             <img
+                        alt="Coco poster"
                         className="movie-poster"
                         src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
             />
@@ -144,6 +148,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "children": <img
+              alt="Coco poster"
               className="movie-poster"
               src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
 />,
@@ -156,6 +161,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
+              "alt": "Coco poster",
               "className": "movie-poster",
               "src": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
             },
