@@ -9,6 +9,7 @@ import './Movies.css';
 export class Movies extends Component {
 
   displayMovies = () => {
+
     const { movies } = this.props;
     return movies.map((movie, idx) => {
 
