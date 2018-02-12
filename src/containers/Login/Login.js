@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { postUser, retrieveFavorites, cleanFavorites } from '../../helper';
 import { addUser, addAllFavorites, updateMovies } from '../../actions';
@@ -24,16 +23,16 @@ export class Login extends Component {
   }
 
   handleSubmit = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
       const retrievedUser = await postUser(this.state);
-      const userFavorites = await retrieveFavorites(retrievedUser.data.id)
-      this.handleRetrievedFavorites(userFavorites.data)
+      const userFavorites = await retrieveFavorites(retrievedUser.data.id);
+      this.handleRetrievedFavorites(userFavorites.data);
 
       this.props.loginUser(retrievedUser.data);
-      this.props.history.push('/')
-    } catch (err) {
-      this.setState({error: true})
+      this.props.history.push('/');
+    } catch (error) {
+      this.setState({error: true});
     }
   }
 
@@ -44,12 +43,12 @@ export class Login extends Component {
   }
 
   handleRetrievedFavorites = (favorites) => {
-    const cleanedFavorites = cleanFavorites(favorites)
+    const cleanedFavorites = cleanFavorites(favorites);
 
     cleanedFavorites.forEach(favorite => {
-       this.props.updateMovies(favorite);
-    })
-    this.props.addAllFavorites(cleanedFavorites)
+      this.props.updateMovies(favorite);
+    });
+    this.props.addAllFavorites(cleanedFavorites);
   }
 
   render() {
@@ -74,7 +73,7 @@ export class Login extends Component {
               type='text'
               value={this.state.password}
               onChange = {this.handleChange}/>
-            <button 
+            <button
               className='login-button'
               disabled = {!this.state.email || !this.state.password}>ENTER</button>
           </div>
@@ -93,6 +92,7 @@ const mapDispatchToProps = (dispatch) => ({
 
 Login.propTypes = {
   loginUser: PropTypes.func,
+  history: PropTypes.object,
   addAllFavorites: PropTypes.func,
   updateMovies: PropTypes.func
 };
