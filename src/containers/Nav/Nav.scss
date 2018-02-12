@@ -1,5 +1,5 @@
 .nav-menu {
-  background-color: #393839;
+  background-color: #252525;
   display: flex;
   padding: 20px;
   justify-content: space-between;
@@ -18,7 +18,7 @@
 }
 
 .active {
-  color: lightblue;
+  color: #41aff8;
 }
 
 .app-title-1 {
@@ -35,4 +35,18 @@
 .home-nav {
   text-decoration: none;
   color: white;
+}
+
+.logout-button {
+  background: #41a1e0;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  height: 24px;
+  width: 110px;
+    &:hover {
+      background: #ffffff;
+      color: #000000;
+      cursor: pointer;
+    }
 }

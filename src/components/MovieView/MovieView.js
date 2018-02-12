@@ -11,9 +11,10 @@ const MovieView = ({ movie, onFavorite }) => {
         <p className='movie-title'>{ title }</p>
         <p className='movie-overview'>{ overview }</p>
       </div>
+      <img
+        className='movie-poster-view' src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
       <Link to={`/movies`}>
-        <img
-          className='movie-poster-view' src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+        <button className='back-to-movies-button'></button>
       </Link>
       <img
         className='movie-backdrop' src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}/>

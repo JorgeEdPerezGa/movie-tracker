@@ -1,6 +1,6 @@
 .movie-view {
   min-height: 110vh;
-  background: black; }
+  background: #0c0c0c; }
 
 .movie-poster-view {
   position: absolute;
@@ -49,4 +49,17 @@
   position: absolute; }
   .favorite-button-movie-view:hover {
     background: url("../../assets/favorite-selected.svg");
+    cursor: pointer; }
+
+.back-to-movies-button {
+  background: url("../../assets/back-button.svg");
+  border: none;
+  position: absolute;
+  top: 17%;
+  left: 11.5%;
+  z-index: 1;
+  width: 40px;
+  height: 40px; }
+  .back-to-movies-button:hover {
+    background: url("../../assets/back-button-hover.svg");
     cursor: pointer; }

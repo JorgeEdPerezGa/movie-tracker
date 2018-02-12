@@ -30,15 +30,15 @@ export class Register extends Component {
     if ( password1 === password2 ) {
       const user = { name, email, password: password1 }
       this.handleRegisterUser(user)
-    } else { 
-      this.setAlert("Passwords don't match")
+    } else {
+      this.setAlert("Passwords don't match!")
     }
   }
 
   handleRegisterUser = async (user) => {
     try{
       const newUser = await registerUser(user);
-      this.handleLogin(newUser.id);  
+      this.handleLogin(newUser.id);
     } catch(error) {
       this.setAlert('User already exists')
     }
@@ -47,7 +47,7 @@ export class Register extends Component {
   setAlert = (alert) => {
     this.setState({error: true, alert, name: '', email: '', password1: '', password2: '' })
   }
-  
+
   handleLogin = (id) => {
     const { name, email, password1 } = this.state
     this.props.addUser({name, email, password: password1, id});
@@ -57,7 +57,7 @@ export class Register extends Component {
   renderAlert = () => {
     const { error, alert } = this.state;
     setTimeout(() => { this.setState({error: false}) }, 10000);
-    return error && ( <p color="white">{alert}</p> );
+    return error && ( <p color="white" className='error-message'>{alert}</p> );
   }
 
   render() {
