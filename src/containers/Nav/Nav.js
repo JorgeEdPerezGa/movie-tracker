@@ -19,8 +19,7 @@ export class Nav extends Component {
 
     logoutUser(user);
     clearFavorites();
-    this.props.history.push('/');
-    this.props.history.go(0);
+    this.props.history.push('/movies');
   }
 
   render() {
