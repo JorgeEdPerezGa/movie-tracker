@@ -36,7 +36,7 @@ export class Nav extends Component {
           <div className='menu'>
             <NavLink className='nav' to='/movies'>MOVIES</NavLink>
             <NavLink className='nav' to='/favorites'>FAVORITES</NavLink>
-            <button onClick={this.handleLogoutUser}>LOGOUT</button>
+            <button className='logout-button' onClick={this.handleLogoutUser}>LOGOUT</button>
           </div>
         </nav>
       );

@@ -29,3 +29,15 @@
 .home-nav {
   text-decoration: none;
   color: white; }
+
+.logout-button {
+  background: #41a1e0;
+  border: none;
+  border-radius: 100px;
+  color: white;
+  height: 24px;
+  width: 110px; }
+  .logout-button:hover {
+    background: #ffffff;
+    color: #000000;
+    cursor: pointer; }
