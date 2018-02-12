@@ -9,7 +9,7 @@ describe('Nav', () => {
   let mockClearFavorites;
   let mockUser;
   let mockMoviesData;
-  let mockHistory
+  let mockHistory;
 
   beforeAll(() => {
     mockMoviesData = {
@@ -57,7 +57,7 @@ describe('Nav', () => {
     mockAddMovies = jest.fn();
     mockLogoutUser = jest.fn();
     mockClearFavorites = jest.fn();
-    mockHistory = { push: jest.fn() }
+    mockHistory = { push: jest.fn(), go: jest.fn() };
     mockUser = {
       email: "fake@123.com",
       id: 2,

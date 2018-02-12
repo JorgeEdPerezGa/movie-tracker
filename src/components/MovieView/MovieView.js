@@ -23,7 +23,7 @@ const MovieView = ({ movie }) => {
 };
 
 MovieView.propTypes = {
-  movie: PropTypes.object,
+  movie: PropTypes.object
 };
 
 export default MovieView;

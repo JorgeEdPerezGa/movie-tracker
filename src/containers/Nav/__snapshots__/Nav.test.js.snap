@@ -440,6 +440,7 @@ ShallowWrapper {
     clearFavorites={[Function]}
     history={
         Object {
+            "go": [Function],
             "push": [Function],
           }
     }
