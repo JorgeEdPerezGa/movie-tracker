@@ -46,6 +46,7 @@ ShallowWrapper {
           </p>
 </div>,
         <img
+          alt="Coco poster"
           className="movie-poster-view"
           src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
 />,
@@ -119,6 +120,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "Coco poster",
           "className": "movie-poster-view",
           "src": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
         },
@@ -188,6 +190,7 @@ ShallowWrapper {
             </p>
 </div>,
           <img
+            alt="Coco poster"
             className="movie-poster-view"
             src="https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg"
 />,
@@ -261,6 +264,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "Coco poster",
             "className": "movie-poster-view",
             "src": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
           },
