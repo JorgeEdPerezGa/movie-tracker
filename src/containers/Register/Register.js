@@ -96,7 +96,9 @@ export class Register extends Component {
               type='text'
               value={this.state.password2}
               onChange = {this.handleChange}/>
-            <button className='register-button'>ENTER</button>
+            <button
+              className='register-button'
+              disabled = { !this.state.email || !this.state.password1 || !this.state.password2 || !this.state.name }>ENTER</button>
           </div>
         </form>
           { this.renderAlert() }

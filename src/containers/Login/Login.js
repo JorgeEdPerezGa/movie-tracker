@@ -74,7 +74,9 @@ export class Login extends Component {
               type='text'
               value={this.state.password}
               onChange = {this.handleChange}/>
-            <button className='login-button'>ENTER</button>
+            <button 
+              className='login-button'
+              disabled = {!this.state.email || !this.state.password}>ENTER</button>
           </div>
         </form>
         {this.renderAlert()}
