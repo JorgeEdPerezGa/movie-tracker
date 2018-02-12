@@ -28,35 +28,35 @@ export class Register extends Component {
     const { password1, password2, email, name } = this.state;
 
     if ( password1 === password2 ) {
-      const user = { name, email, password: password1 }
-      this.handleRegisterUser(user)
+      const user = { name, email, password: password1 };
+      this.handleRegisterUser(user);
     } else {
-      this.setAlert("Passwords don't match!")
+      this.setAlert("Passwords don't match!");
     }
   }
 
   handleRegisterUser = async (user) => {
-    try{
+    try {
       const newUser = await registerUser(user);
       this.handleLogin(newUser.id);
-    } catch(error) {
-      this.setAlert('User already exists')
+    } catch (error) {
+      this.setAlert('User already exists');
     }
   }
 
   setAlert = (alert) => {
-    this.setState({error: true, alert, name: '', email: '', password1: '', password2: '' })
+    this.setState({error: true, alert, name: '', email: '', password1: '', password2: '' });
   }
 
   handleLogin = (id) => {
-    const { name, email, password1 } = this.state
+    const { name, email, password1 } = this.state;
     this.props.addUser({name, email, password: password1, id});
     this.props.history.push('/');
   }
 
   renderAlert = () => {
     const { error, alert } = this.state;
-    setTimeout(() => { this.setState({error: false}) }, 10000);
+    setTimeout(() => { this.setState({error: false}); }, 10000);
     return error && ( <p color="white" className='error-message'>{alert}</p> );
   }
 
@@ -101,7 +101,7 @@ export class Register extends Component {
               disabled = { !this.state.email || !this.state.password1 || !this.state.password2 || !this.state.name }>ENTER</button>
           </div>
         </form>
-          { this.renderAlert() }
+        { this.renderAlert() }
       </div>
     );
   }
@@ -116,6 +116,7 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 Register.propTypes = {
+  history: PropTypes.object,
   user: PropTypes.object,
   addUser: PropTypes.func
 };
