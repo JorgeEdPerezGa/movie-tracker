@@ -4,14 +4,14 @@ import PropTypes from 'prop-types';
 import './MovieCard.css';
 
 const MovieCard = ({ movie, onFavorite }) => {
-  const { poster_path, movie_id, favorite } = movie;
+  const { poster_path, movie_id, favorite, title } = movie;
   const selected = favorite ? 'favorite-selected' : '';
 
   return (
     <article className='movie-card-main'>
       <Link to={`/movies/${movie_id}`}>
         <img
-          className='movie-poster' src={`https://image.tmdb.org/t/p/w500${poster_path}`}/>
+          className='movie-poster' src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={`${title} poster`}/>
       </Link>
       <div className='button-container'>
         <button
