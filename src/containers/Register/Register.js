@@ -79,7 +79,7 @@ export class Register extends Component {
               className='register-input'
               placeholder='EMAIL'
               name='email'
-              type='text'
+              type='email'
               value={this.state.email}
               onChange = {this.handleChange}/>
             <input
