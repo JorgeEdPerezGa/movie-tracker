@@ -1,11 +1,15 @@
 .movie-card-main {
   width: 300px;
-  background: #393839;
+  background: #252525;
   margin: 15px;
-  height: 510px;
 }
 .movie-poster {
   width: 300px;
+}
+
+.button-container {
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 .favorite-button {
@@ -13,7 +17,6 @@
   border: none;
   width: 35px;
   height: 35px;
-  margin-top: 12px;
     &:hover {
         background: url('../../assets/favorite-selected.svg');
         cursor: pointer;
