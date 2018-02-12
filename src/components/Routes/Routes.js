@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Movies from '../../containers/Movies/Movies';
 import Favorites from '../../containers/Favorites/Favorites';
 import Nav from '../../containers/Nav/Nav';
 import Login from '../../containers/Login/Login';
 import Register from '../../containers/Register/Register';
-import { connect } from 'react-redux';
 import MovieView from '../MovieView/MovieView';
 
 export const Routes = (props) => {
@@ -28,7 +28,7 @@ export const Routes = (props) => {
         });
 
         if (movie) {
-          return ( <MovieView movie = {movie}/> );
+          return ( <MovieView movie={movie} /> );
         }
       }} />
 

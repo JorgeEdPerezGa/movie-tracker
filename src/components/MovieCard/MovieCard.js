@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import './MovieCard.css';
 
 const MovieCard = ({ movie, onFavorite }) => {
-  const { title, overview, poster_path, backdrop_path, movie_id } = movie
+  const { title, overview, poster_path, backdrop_path, movie_id, favorite } = movie;
+  const klass = favorite ? 'movie-card-main favorite-selected' : 'movie-card-main';
+
   return (
-    <article className='movie-card-main'>
+    <article className={klass}>
       {/* <p className='movie-title'>{ title }</p>
       <p className='movie-overview'>{ overview }</p> */}
       <Link to={`/movies/${movie_id}`}>
