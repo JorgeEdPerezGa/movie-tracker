@@ -70,7 +70,7 @@ export class Login extends Component {
               className='login-input'
               placeholder='password'
               name='password'
-              type='text'
+              type='password'
               value={this.state.password}
               onChange = {this.handleChange}/>
             <button
