@@ -15,10 +15,11 @@ const MovieCard = ({ movie, onFavorite }) => {
       </Link>
       {/* <img
         className='movie-backdrop' src={`https://image.tmdb.org/t/p/w500${backdrop_path}`}/> */}
-      <button
-        onClick={()=> onFavorite(movie)}
-        className='favorite-button'
-        ></button>
+      <div className='button-container'>
+        <button
+          onClick={()=> onFavorite(movie)}
+          className='favorite-button'></button>
+      </div>
     </article>
   );
 };

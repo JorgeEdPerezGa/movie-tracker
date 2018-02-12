@@ -1,18 +1,20 @@
 .movie-card-main {
   width: 300px;
-  background: #393839;
-  margin: 15px;
-  height: 510px; }
+  background: #252525;
+  margin: 15px; }
 
 .movie-poster {
   width: 300px; }
+
+.button-container {
+  padding-top: 12px;
+  padding-bottom: 12px; }
 
 .favorite-button {
   background: url("../../assets/favorite.svg");
   border: none;
   width: 35px;
-  height: 35px;
-  margin-top: 12px; }
+  height: 35px; }
   .favorite-button:hover {
     background: url("../../assets/favorite-selected.svg");
     cursor: pointer; }
