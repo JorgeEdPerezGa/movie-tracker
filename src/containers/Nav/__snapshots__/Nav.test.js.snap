@@ -49,7 +49,7 @@ ShallowWrapper {
                     className="nav"
                     to="/movies"
           >
-                    Movies
+                    MOVIES
           </NavLink>
           <NavLink
                     activeClassName="active"
@@ -57,7 +57,7 @@ ShallowWrapper {
                     className="nav"
                     to="/login"
           >
-                    Login
+                    LOGIN
           </NavLink>
           <NavLink
                     activeClassName="active"
@@ -65,7 +65,7 @@ ShallowWrapper {
                     className="nav"
                     to="/register"
           >
-                    Register
+                    REGISTER
           </NavLink>
 </div>,
       ],
@@ -144,7 +144,7 @@ ShallowWrapper {
               className="nav"
               to="/movies"
 >
-              Movies
+              MOVIES
 </NavLink>,
             <NavLink
               activeClassName="active"
@@ -152,7 +152,7 @@ ShallowWrapper {
               className="nav"
               to="/login"
 >
-              Login
+              LOGIN
 </NavLink>,
             <NavLink
               activeClassName="active"
@@ -160,7 +160,7 @@ ShallowWrapper {
               className="nav"
               to="/register"
 >
-              Register
+              REGISTER
 </NavLink>,
           ],
           "className": "menu",
@@ -174,12 +174,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Movies",
+              "children": "MOVIES",
               "className": "nav",
               "to": "/movies",
             },
             "ref": null,
-            "rendered": "Movies",
+            "rendered": "MOVIES",
             "type": [Function],
           },
           Object {
@@ -189,12 +189,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Login",
+              "children": "LOGIN",
               "className": "nav",
               "to": "/login",
             },
             "ref": null,
-            "rendered": "Login",
+            "rendered": "LOGIN",
             "type": [Function],
           },
           Object {
@@ -204,12 +204,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Register",
+              "children": "REGISTER",
               "className": "nav",
               "to": "/register",
             },
             "ref": null,
-            "rendered": "Register",
+            "rendered": "REGISTER",
             "type": [Function],
           },
         ],
@@ -251,7 +251,7 @@ ShallowWrapper {
                         className="nav"
                         to="/movies"
             >
-                        Movies
+                        MOVIES
             </NavLink>
             <NavLink
                         activeClassName="active"
@@ -259,7 +259,7 @@ ShallowWrapper {
                         className="nav"
                         to="/login"
             >
-                        Login
+                        LOGIN
             </NavLink>
             <NavLink
                         activeClassName="active"
@@ -267,7 +267,7 @@ ShallowWrapper {
                         className="nav"
                         to="/register"
             >
-                        Register
+                        REGISTER
             </NavLink>
 </div>,
         ],
@@ -346,7 +346,7 @@ ShallowWrapper {
                 className="nav"
                 to="/movies"
 >
-                Movies
+                MOVIES
 </NavLink>,
               <NavLink
                 activeClassName="active"
@@ -354,7 +354,7 @@ ShallowWrapper {
                 className="nav"
                 to="/login"
 >
-                Login
+                LOGIN
 </NavLink>,
               <NavLink
                 activeClassName="active"
@@ -362,7 +362,7 @@ ShallowWrapper {
                 className="nav"
                 to="/register"
 >
-                Register
+                REGISTER
 </NavLink>,
             ],
             "className": "menu",
@@ -376,12 +376,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Movies",
+                "children": "MOVIES",
                 "className": "nav",
                 "to": "/movies",
               },
               "ref": null,
-              "rendered": "Movies",
+              "rendered": "MOVIES",
               "type": [Function],
             },
             Object {
@@ -391,12 +391,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Login",
+                "children": "LOGIN",
                 "className": "nav",
                 "to": "/login",
               },
               "ref": null,
-              "rendered": "Login",
+              "rendered": "LOGIN",
               "type": [Function],
             },
             Object {
@@ -406,12 +406,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Register",
+                "children": "REGISTER",
                 "className": "nav",
                 "to": "/register",
               },
               "ref": null,
-              "rendered": "Register",
+              "rendered": "REGISTER",
               "type": [Function],
             },
           ],
@@ -487,7 +487,7 @@ ShallowWrapper {
                     className="nav"
                     to="/movies"
           >
-                    Movies
+                    MOVIES
           </NavLink>
           <NavLink
                     activeClassName="active"
@@ -495,12 +495,13 @@ ShallowWrapper {
                     className="nav"
                     to="/favorites"
           >
-                    Favorites
+                    FAVORITES
           </NavLink>
           <button
+                    className="logout-button"
                     onClick={[Function]}
           >
-                    Logout
+                    LOGOUT
           </button>
 </div>,
       ],
@@ -579,7 +580,7 @@ ShallowWrapper {
               className="nav"
               to="/movies"
 >
-              Movies
+              MOVIES
 </NavLink>,
             <NavLink
               activeClassName="active"
@@ -587,12 +588,13 @@ ShallowWrapper {
               className="nav"
               to="/favorites"
 >
-              Favorites
+              FAVORITES
 </NavLink>,
             <button
+              className="logout-button"
               onClick={[Function]}
 >
-              Logout
+              LOGOUT
 </button>,
           ],
           "className": "menu",
@@ -606,12 +608,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Movies",
+              "children": "MOVIES",
               "className": "nav",
               "to": "/movies",
             },
             "ref": null,
-            "rendered": "Movies",
+            "rendered": "MOVIES",
             "type": [Function],
           },
           Object {
@@ -621,12 +623,12 @@ ShallowWrapper {
             "props": Object {
               "activeClassName": "active",
               "ariaCurrent": "true",
-              "children": "Favorites",
+              "children": "FAVORITES",
               "className": "nav",
               "to": "/favorites",
             },
             "ref": null,
-            "rendered": "Favorites",
+            "rendered": "FAVORITES",
             "type": [Function],
           },
           Object {
@@ -634,11 +636,12 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "children": "Logout",
+              "children": "LOGOUT",
+              "className": "logout-button",
               "onClick": [Function],
             },
             "ref": null,
-            "rendered": "Logout",
+            "rendered": "LOGOUT",
             "type": "button",
           },
         ],
@@ -680,7 +683,7 @@ ShallowWrapper {
                         className="nav"
                         to="/movies"
             >
-                        Movies
+                        MOVIES
             </NavLink>
             <NavLink
                         activeClassName="active"
@@ -688,12 +691,13 @@ ShallowWrapper {
                         className="nav"
                         to="/favorites"
             >
-                        Favorites
+                        FAVORITES
             </NavLink>
             <button
+                        className="logout-button"
                         onClick={[Function]}
             >
-                        Logout
+                        LOGOUT
             </button>
 </div>,
         ],
@@ -772,7 +776,7 @@ ShallowWrapper {
                 className="nav"
                 to="/movies"
 >
-                Movies
+                MOVIES
 </NavLink>,
               <NavLink
                 activeClassName="active"
@@ -780,12 +784,13 @@ ShallowWrapper {
                 className="nav"
                 to="/favorites"
 >
-                Favorites
+                FAVORITES
 </NavLink>,
               <button
+                className="logout-button"
                 onClick={[Function]}
 >
-                Logout
+                LOGOUT
 </button>,
             ],
             "className": "menu",
@@ -799,12 +804,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Movies",
+                "children": "MOVIES",
                 "className": "nav",
                 "to": "/movies",
               },
               "ref": null,
-              "rendered": "Movies",
+              "rendered": "MOVIES",
               "type": [Function],
             },
             Object {
@@ -814,12 +819,12 @@ ShallowWrapper {
               "props": Object {
                 "activeClassName": "active",
                 "ariaCurrent": "true",
-                "children": "Favorites",
+                "children": "FAVORITES",
                 "className": "nav",
                 "to": "/favorites",
               },
               "ref": null,
-              "rendered": "Favorites",
+              "rendered": "FAVORITES",
               "type": [Function],
             },
             Object {
@@ -827,11 +832,12 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Logout",
+                "children": "LOGOUT",
+                "className": "logout-button",
                 "onClick": [Function],
               },
               "ref": null,
-              "rendered": "Logout",
+              "rendered": "LOGOUT",
               "type": "button",
             },
           ],

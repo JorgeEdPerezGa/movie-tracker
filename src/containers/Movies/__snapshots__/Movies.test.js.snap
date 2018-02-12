@@ -99,6 +99,7 @@ ShallowWrapper {
           onFavorite={[Function]}
 />,
       ],
+      "className": "movie-list",
     },
     "ref": null,
     "rendered": Array [
@@ -185,6 +186,7 @@ ShallowWrapper {
             onFavorite={[Function]}
 />,
         ],
+        "className": "movie-list",
       },
       "ref": null,
       "rendered": Array [
