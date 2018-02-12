@@ -40,7 +40,7 @@ export class Login extends Component {
   renderAlert = () => {
     const { error } = this.state;
     setTimeout(() => { this.setState({error: false}) }, 4000);
-    return error && ( <p>Could not find your account</p> );
+    return error && ( <p className='error-message'>Could not find your account!</p> );
   }
 
   handleRetrievedFavorites = (favorites) => {
