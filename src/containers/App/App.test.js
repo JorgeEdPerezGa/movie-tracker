@@ -4,8 +4,7 @@ import App from './App';
 
 describe('App', () => {
   it('should match snapshot', () => {
-    const renderedComponent = shallow(<App />)
-    expect(renderedComponent).toMatchSnapshot()
-  })
-})
-
+    const renderedComponent = shallow(<App />);
+    expect(renderedComponent).toMatchSnapshot();
+  });
+});
