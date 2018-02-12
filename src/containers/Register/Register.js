@@ -86,14 +86,14 @@ export class Register extends Component {
               className='register-input user-password-1'
               placeholder='PASSWORD'
               name='password1'
-              type='text'
+              type='password'
               value={this.state.password1}
               onChange = {this.handleChange}/>
             <input
               className='register-input user-password-2'
               placeholder='RETYPE PASSWORD'
               name='password2'
-              type='text'
+              type='password'
               value={this.state.password2}
               onChange = {this.handleChange}/>
             <button
