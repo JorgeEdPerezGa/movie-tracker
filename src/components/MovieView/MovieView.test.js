@@ -29,8 +29,4 @@ describe('MovieView', () => {
     expect(renderedComponent).toMatchSnapshot();
   });
 
-  it('should call onFavorite when button is clicked', () => {
-    renderedComponent.find('button').simulate('click');
-    expect(mockOnFavorite.mock.calls.length).toEqual(1);
-  });
 });
