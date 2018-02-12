@@ -61,10 +61,6 @@ ShallowWrapper {
           className="movie-backdrop"
           src="https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg"
 />,
-        <button
-          className="favorite-button-movie-view"
-          onClick={[Function]}
-/>,
       ],
       "className": "movie-view",
     },
@@ -167,18 +163,6 @@ ShallowWrapper {
         "rendered": null,
         "type": "img",
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "className": "favorite-button-movie-view",
-          "onClick": [Function],
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "button",
-      },
     ],
     "type": "article",
   },
@@ -218,10 +202,6 @@ ShallowWrapper {
           <img
             className="movie-backdrop"
             src="https://image.tmdb.org/t/p/w500/askg3SMvhqEl4OL52YuvdtY40Yb.jpg"
-/>,
-          <button
-            className="favorite-button-movie-view"
-            onClick={[Function]}
 />,
         ],
         "className": "movie-view",
@@ -324,18 +304,6 @@ ShallowWrapper {
           "ref": null,
           "rendered": null,
           "type": "img",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "className": "favorite-button-movie-view",
-            "onClick": [Function],
-          },
-          "ref": null,
-          "rendered": null,
-          "type": "button",
         },
       ],
       "type": "article",
