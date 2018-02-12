@@ -28,7 +28,7 @@ export const Routes = (props) => {
         });
 
         if (movie) {
-          return ( <MovieView movie = {movie}/> );
+          return ( <MovieView movie={movie} /> );
         }
       }} />
 

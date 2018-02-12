@@ -3,6 +3,9 @@
   background: #252525;
   margin: 15px; }
 
+.favorite-selected {
+  background: magenta; }
+
 .movie-poster {
   width: 300px; }
 
