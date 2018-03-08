@@ -16,19 +16,33 @@ Movie Tracker is a group project that works off The Movie DB API and incorporate
 First, clone down the backend repo: (https://github.com/jjlljj/movie-tracker-backend)
 
 `npm install`
+
 `npm run build`
 Make sure to have postgresql installed then initialize the database with the following:
+
 `psql -f ./database/users.sql`
+
 `npm start` on http://localhost:3000/
 
 Second, clone down this repo and run
 
 `npm install`
+
 `npm start` on http://localhost:3001/
 
 ## API Reference
 
-We used The Movie DB API (https://www.themoviedb.org/documentation/api)
+You will need to get a key from [The Movie DB API](https://www.themoviedb.org/documentation/api)
+
+Then create a new folder in `src` called `api`.
+Create a file called `key.js` with: 
+```
+const key = 'Movie DB key here';
+
+export default key; 
+``` 
+
+The final file path should be `movie-tracker/src/api/key.js`.
 
 ## Tests
 
