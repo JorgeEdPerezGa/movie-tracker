@@ -35,12 +35,12 @@ Second, clone down this repo and run
 You will need to get a key from [The Movie DB API](https://www.themoviedb.org/documentation/api)
 
 Then create a new folder in `src` called `api`.
-Create a file called `key.js` with: 
+Create a file called `key.js` with:
 ```
 const key = 'Movie DB key here';
 
-export default key; 
-``` 
+export default key;
+```
 
 The final file path should be `movie-tracker/src/api/key.js`.
 
@@ -54,6 +54,6 @@ Amanda Tjan, James Logue and Jorge Ed PerezGa are the project developers.
 
 ## Project Layout
 
+![movie tracker gif](./public/1.gif)
+
 ![movie tracker layout](./public/MovieTrackerScreenshot.png)
-
-
