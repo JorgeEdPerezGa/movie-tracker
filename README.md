@@ -1,5 +1,7 @@
 # Movie Tracker
 
+![movie tracker gif](./public/1.gif)
+
 ## Synopsis
 
 Movie Tracker is a group project that works off The Movie DB API and incorporates our own API to save user information. We had one week to build an application that pulled in the most recent movies from The Movie DB API. Our API allows a user to register and then log in when they return. Also a user can favorite movies, which is then saved in our API so that a user can view their list when they log in again. We also did an extension where a user can click and view more details about any individual movie. The application was built in React.js and Redux. Our testing suites were built using Jest and Enzyme.
@@ -53,7 +55,5 @@ Run `npm test` in the root directory
 Amanda Tjan, James Logue and Jorge Ed PerezGa are the project developers.
 
 ## Project Layout
-
-![movie tracker gif](./public/1.gif)
 
 ![movie tracker layout](./public/MovieTrackerScreenshot.png)
