@@ -53,8 +53,11 @@ Run `npm test` in the root directory
 ## Contributors
 
 Amanda Tjan - [Github](https://github.com/soytjan)
+
 James Logue - [Github](https://github.com/jjlljj)
+
 Jorge Ed PerezGa - [Github](https://github.com/JorgeEdPerezGa)
+
 
 ## Project Layout
 
